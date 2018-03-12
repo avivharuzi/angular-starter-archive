@@ -5,7 +5,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RoutingModule } from './app.routing';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+
+// Custom Modules
 import { MessageModule } from './modules/message/message.module';
+import { PaginationModule } from './modules/pagination/pagination.module';
 
 // Components
 import { AppComponent } from './app.component';
@@ -50,7 +53,8 @@ import { DefaultPipe } from './pipes/default/default.pipe';
     RoutingModule,
     RouterModule,
     HttpClientModule,
-    MessageModule.forRoot()
+    MessageModule.forRoot(),
+    PaginationModule.forRoot()
   ],
   providers: [
     ValidationService
