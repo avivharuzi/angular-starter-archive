@@ -4,7 +4,6 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'search'
 })
 export class SearchPipe implements PipeTransform {
-
   transform(value: any, searchValue?: any, searchBy?: any): any {
     if (!searchValue) {
       return value;
@@ -19,5 +18,4 @@ export class SearchPipe implements PipeTransform {
       return temp;
     }
   }
-
 }

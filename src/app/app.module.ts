@@ -2,16 +2,17 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { RoutingModule } from './app.routes';
+import { RoutingModule } from './app.routing';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { MessageModule } from './modules/message/message.module';
 
 // Components
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
-import { BodyComponent } from './components/body/body.component';
-import { HomeComponent } from './components/body/home/home.component';
-import { FooterComponent } from './components/footer/footer.component';
+import { HeaderComponent } from './components/layouts/header/header.component';
+import { BodyComponent } from './components/layouts/body/body.component';
+import { FooterComponent } from './components/layouts/footer/footer.component';
+import { HomeComponent } from './components/layouts/body/home/home.component';
 import { ErrorPageComponent } from './components/errors/error-page/error-page.component';
 import { ErrorFormComponent } from './components/errors/error-form/error-form.component';
 
@@ -21,23 +22,26 @@ import { ValidationService } from './services/validation/validation.service';
 // Pipes
 import { SearchPipe } from './pipes/search/search.pipe';
 import { CapitalizePipe } from './pipes/capitalize/capitalize.pipe';
-import { DefaultImageDirective } from './directives/default-image/default-image.directive';
 
 // Directives
-
+import { DefaultImageDirective } from './directives/default-image/default-image.directive';
+import { UcwordsPipe } from './pipes/ucwords/ucwords.pipe';
+import { DefaultPipe } from './pipes/default/default.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
+    BodyComponent,
     FooterComponent,
     ErrorPageComponent,
     ErrorFormComponent,
-    BodyComponent,
     CapitalizePipe,
     SearchPipe,
-    HomeComponent,
-    DefaultImageDirective
+    UcwordsPipe,
+    DefaultPipe,
+    DefaultImageDirective,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +49,8 @@ import { DefaultImageDirective } from './directives/default-image/default-image.
     ReactiveFormsModule,
     RoutingModule,
     RouterModule,
-    HttpClientModule
+    HttpClientModule,
+    MessageModule.forRoot()
   ],
   providers: [
     ValidationService
