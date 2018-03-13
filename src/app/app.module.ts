@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 // Custom Modules
 import { MessageModule } from './modules/message/message.module';
 import { PaginationModule } from './modules/pagination/pagination.module';
+import { BackToTopModule } from './modules/back-to-top/back-to-top.module';
 
 // Components
 import { AppComponent } from './app.component';
@@ -54,7 +55,8 @@ import { DefaultPipe } from './pipes/default/default.pipe';
     RouterModule,
     HttpClientModule,
     MessageModule.forRoot(),
-    PaginationModule.forRoot()
+    PaginationModule.forRoot(),
+    BackToTopModule.forRoot()
   ],
   providers: [
     ValidationService
