@@ -7,8 +7,10 @@ import { Component, OnInit, Input } from '@angular/core';
 export class MessageComponent implements OnInit {
   @Input()
   public type: string;
+
   @Input()
   public message: any;
+
   @Input()
   public class: any;
 

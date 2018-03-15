@@ -1,4 +1,5 @@
 import { Directive, Input, ElementRef, OnInit } from '@angular/core';
+import { DEFAULT_IMAGE_PATH } from './../../constants/urls';
 
 @Directive({
   selector: '[appDefaultImage]'
@@ -12,7 +13,7 @@ export class DefaultImageDirective implements OnInit {
   ngOnInit() {
     this.el.nativeElement.src = this.appDefaultImage;
     this.el.nativeElement.onerror = () => {
-      this.el.nativeElement.src = 'assets/images/defaults/default-image.png';
+      this.el.nativeElement.src = DEFAULT_IMAGE_PATH;
     };
   }
 }

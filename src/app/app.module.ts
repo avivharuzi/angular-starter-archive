@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MessageModule } from './modules/message/message.module';
 import { PaginationModule } from './modules/pagination/pagination.module';
 import { BackToTopModule } from './modules/back-to-top/back-to-top.module';
+import { LoadingModule } from './modules/loading/loading.module';
 
 // Components
 import { AppComponent } from './app.component';
@@ -26,11 +27,11 @@ import { ValidationService } from './services/validation/validation.service';
 // Pipes
 import { SearchPipe } from './pipes/search/search.pipe';
 import { CapitalizePipe } from './pipes/capitalize/capitalize.pipe';
+import { UcwordsPipe } from './pipes/ucwords/ucwords.pipe';
+import { DefaultPipe } from './pipes/default/default.pipe';
 
 // Directives
 import { DefaultImageDirective } from './directives/default-image/default-image.directive';
-import { UcwordsPipe } from './pipes/ucwords/ucwords.pipe';
-import { DefaultPipe } from './pipes/default/default.pipe';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { DefaultPipe } from './pipes/default/default.pipe';
     HttpClientModule,
     MessageModule.forRoot(),
     PaginationModule.forRoot(),
-    BackToTopModule.forRoot()
+    BackToTopModule.forRoot(),
+    LoadingModule.forRoot()
   ],
   providers: [
     ValidationService
