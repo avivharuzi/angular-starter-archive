@@ -1,0 +1,9 @@
+:host {
+  width: 100%;
+  font-size: 80%;
+  color: #dc3545;
+}
+
+:host > p {
+  margin-top: 0.25rem;
+}
