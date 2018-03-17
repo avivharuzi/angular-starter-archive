@@ -41,4 +41,20 @@ export class ValidationService {
       control.markAsPristine({ onlySelf: true });
     });
   }
+
+  getFormDataFromObject(obj: Object): FormData {
+    const fd: FormData = new FormData();
+    for (let key in obj) {
+      if (obj.hasOwnProperty(key)) {
+        if (obj[key] && obj[key].constructor === Array) {
+          for (let arrKey of obj[key]) {
+            fd.append(key, arrKey);
+          }
+        } else {
+          fd.append(key, obj[key]);
+        }
+      }
+    }
+    return fd;
+  }
 }

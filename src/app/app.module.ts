@@ -1,5 +1,6 @@
 // Modules
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RoutingModule } from './app.routing';
@@ -50,6 +51,7 @@ import { DefaultImageDirective } from './directives/default-image/default-image.
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
     RoutingModule,

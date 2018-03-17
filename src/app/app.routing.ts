@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './components/layouts/body/home/home.component';
 import { ErrorPageComponent } from './components/errors/error-page/error-page.component';
 
+// Routes
 const appRoutes: Routes = [
   { path: '', component: HomeComponent, data: { title: 'Home' } },
   { path:  '', redirectTo: '', pathMatch: 'full' },
