@@ -30,6 +30,7 @@ import { SearchPipe } from './pipes/search/search.pipe';
 import { CapitalizePipe } from './pipes/capitalize/capitalize.pipe';
 import { UcwordsPipe } from './pipes/ucwords/ucwords.pipe';
 import { DefaultPipe } from './pipes/default/default.pipe';
+import { TruncatePipe } from './pipes/truncate/truncate.pipe';
 
 // Directives
 import { DefaultImageDirective } from './directives/default-image/default-image.directive';
@@ -47,7 +48,8 @@ import { DefaultImageDirective } from './directives/default-image/default-image.
     UcwordsPipe,
     DefaultPipe,
     DefaultImageDirective,
-    HomeComponent
+    HomeComponent,
+    TruncatePipe
   ],
   imports: [
     BrowserModule,
