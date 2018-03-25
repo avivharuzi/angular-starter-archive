@@ -31,6 +31,7 @@ import { CapitalizePipe } from './pipes/capitalize/capitalize.pipe';
 import { UcwordsPipe } from './pipes/ucwords/ucwords.pipe';
 import { DefaultPipe } from './pipes/default/default.pipe';
 import { TruncatePipe } from './pipes/truncate/truncate.pipe';
+import { SafeHtmlPipe } from './pipes/safe-html/safe-html.pipe';
 
 // Directives
 import { DefaultImageDirective } from './directives/default-image/default-image.directive';
@@ -41,15 +42,16 @@ import { DefaultImageDirective } from './directives/default-image/default-image.
     HeaderComponent,
     BodyComponent,
     FooterComponent,
-    ErrorPageComponent,
     ErrorFormComponent,
+    ErrorPageComponent,
+    DefaultImageDirective,
     CapitalizePipe,
     SearchPipe,
     UcwordsPipe,
     DefaultPipe,
-    DefaultImageDirective,
     HomeComponent,
-    TruncatePipe
+    TruncatePipe,
+    SafeHtmlPipe
   ],
   imports: [
     BrowserModule,
