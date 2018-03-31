@@ -15,10 +15,7 @@ import { LoadingModule } from './modules/loading/loading.module';
 
 // Components
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/layouts/header/header.component';
-import { BodyComponent } from './components/layouts/body/body.component';
-import { FooterComponent } from './components/layouts/footer/footer.component';
-import { HomeComponent } from './components/layouts/body/home/home.component';
+import { HomeComponent } from './components/main/pages/home/home.component';
 import { ErrorPageComponent } from './components/errors/error-page/error-page.component';
 import { ErrorFormComponent } from './components/errors/error-form/error-form.component';
 
@@ -39,9 +36,7 @@ import { DefaultImageDirective } from './directives/default-image/default-image.
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    BodyComponent,
-    FooterComponent,
+    HomeComponent,
     ErrorFormComponent,
     ErrorPageComponent,
     DefaultImageDirective,
@@ -49,7 +44,6 @@ import { DefaultImageDirective } from './directives/default-image/default-image.
     SearchPipe,
     UcwordsPipe,
     DefaultPipe,
-    HomeComponent,
     TruncatePipe,
     SafeHtmlPipe
   ],

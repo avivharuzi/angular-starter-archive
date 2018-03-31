@@ -19,7 +19,7 @@ export class Validator {
   static minLength(len: number): ValidatorFn {
     return (formControl) => {
       if (formControl.value !== null) {
-        return formControl.value.toString().length <= len ? { 'minLengthError': `You need at least ${len} numbers` } : null;
+        return formControl.value.toString().length <= len ? { 'minLengthError': `You need at least ${len} characters` } : null;
       }
     };
   }
@@ -27,7 +27,7 @@ export class Validator {
   static maxLength(len: number): ValidatorFn {
     return (formControl) => {
       if (formControl.value !== null) {
-        return formControl.value.toString().length >= len ? { 'maxLengthError': `You need a max ${len} numbers` } : null;
+        return formControl.value.toString().length >= len ? { 'maxLengthError': `You need a max ${len} characters` } : null;
       }
     };
   }

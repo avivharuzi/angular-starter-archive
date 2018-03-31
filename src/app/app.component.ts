@@ -19,6 +19,10 @@ export class AppComponent implements OnInit  {
   ) {}
 
   ngOnInit() {
+    this.changeTitle();
+  }
+
+  changeTitle(): void {
     this.router.events
       .filter((event) => event instanceof NavigationEnd)
       .map(() => this.activatedRoute)

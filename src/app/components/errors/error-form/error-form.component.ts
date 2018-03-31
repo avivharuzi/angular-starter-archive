@@ -19,7 +19,6 @@ export class ErrorFormComponent implements OnInit , AfterContentChecked {
 
   ngAfterContentChecked() {
     this.errors = new Array<string>();
-
     for (const key in this.control.errors) {
       if (this.control.dirty && this.control.invalid) {
         this.errors.push(this.control.errors[key]);
