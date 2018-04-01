@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+
 import { LOADING_GIF_PATH } from '../../constants/urls';
 
 @Component({
@@ -7,17 +8,10 @@ import { LOADING_GIF_PATH } from '../../constants/urls';
   styleUrls: ['./loading.component.css']
 })
 export class LoadingComponent implements OnInit {
-  @Input()
-  public loading: boolean;
-
-  @Input()
-  public size: number;
-
-  @Input()
-  public background: string;
-
-  @Input()
-  public gif: string;
+  @Input() public loading: boolean;
+  @Input() public size: number;
+  @Input() public background: string;
+  @Input() public gif: string;
 
   constructor() {
     this.gif = LOADING_GIF_PATH;

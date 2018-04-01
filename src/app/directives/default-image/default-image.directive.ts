@@ -5,8 +5,7 @@ import { DEFAULT_IMAGE_PATH } from './../../constants/urls';
   selector: '[appDefaultImage]'
 })
 export class DefaultImageDirective implements OnInit {
-  @Input('appDefaultImage')
-  public appDefaultImage: string;
+  @Input('appDefaultImage') public appDefaultImage: string;
 
   constructor (public el: ElementRef) { }
 

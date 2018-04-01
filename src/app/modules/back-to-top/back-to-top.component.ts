@@ -6,17 +6,10 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./back-to-top.component.css']
 })
 export class BackToTopComponent implements OnInit {
-  @Input()
-  public color: string;
-
-  @Input()
-  public background: string;
-
-  @Input()
-  public shape: string;
-
-  @Input()
-  public speed: number;
+  @Input() public color: string;
+  @Input() public background: string;
+  @Input() public shape: string;
+  @Input() public speed: number;
 
   constructor() { }
 

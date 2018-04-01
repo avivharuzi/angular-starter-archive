@@ -10,7 +10,7 @@ import { ErrorPageComponent } from './components/errors/error-page/error-page.co
 const appRoutes: Routes = [
   { path: '', component: HomeComponent, data: { title: 'Home' } },
   { path:  '', redirectTo: '', pathMatch: 'full' },
-  { path: '**', component: ErrorPageComponent },
+  { path: '**', component: ErrorPageComponent }
 ];
 
 const appRouter: ModuleWithProviders = RouterModule.forRoot(appRoutes);

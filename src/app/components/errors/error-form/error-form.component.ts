@@ -7,8 +7,7 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./error-form.component.css']
 })
 export class ErrorFormComponent implements OnInit , AfterContentChecked {
-  @Input()
-  public control: FormControl;
+  @Input() public control: FormControl;
 
   public errors: string[];
 

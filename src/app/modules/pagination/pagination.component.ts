@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+
 import { PaginationService } from './pagination.service';
 
 @Component({
@@ -6,23 +7,16 @@ import { PaginationService } from './pagination.service';
   templateUrl: './pagination.component.html'
 })
 export class PaginationComponent implements OnInit {
-  @Input()
-  public pageItems: any[];
-
-  @Input()
-  public pageSize: number;
-
-  @Input()
-  public scrollTop: boolean;
-
-  @Output()
-  public pageChange: EventEmitter<any> = new EventEmitter<any>();
+  @Input() public pageItems: any[];
+  @Input() public pageSize: number;
+  @Input() public scrollTop: boolean;
+  @Output() public pageChange: EventEmitter<any> = new EventEmitter<any>();
 
   public pager: any;
   public newPageItems: any[];
 
   constructor(
-    public paginationService: PaginationService
+    private paginationService: PaginationService
   ) {
     this.scrollTop = false;
   }
