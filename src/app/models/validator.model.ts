@@ -19,7 +19,7 @@ export class Validator {
   static minLength(len: number): ValidatorFn {
     return (formControl) => {
       if (formControl.value !== null) {
-        return formControl.value.toString().length <= len ? { 'minLengthError': `You need at least ${len} characters` } : null;
+        return formControl.value.toString().length < len ? { 'minLengthError': `You need at least ${len} characters` } : null;
       }
     };
   }
@@ -27,7 +27,7 @@ export class Validator {
   static maxLength(len: number): ValidatorFn {
     return (formControl) => {
       if (formControl.value !== null) {
-        return formControl.value.toString().length >= len ? { 'maxLengthError': `You need a max ${len} characters` } : null;
+        return formControl.value.toString().length > len ? { 'maxLengthError': `You need a max ${len} characters` } : null;
       }
     };
   }
@@ -35,8 +35,33 @@ export class Validator {
   static minAndMaxLength(min: number, max: number): ValidatorFn {
     return (formControl) => {
       if (formControl.value !== null) {
-        return formControl.value.toString().length > max && formControl.value.toString().length < min ?
-        { 'minAndMaxLengthError': `You need to put minimum ${min} characters and max ${max} characters` } : null;
+        return formControl.value.toString().length > max || formControl.value.toString().length < min ?
+        { 'minAndMaxLengthError': `You need to put characters between ${min} and ${max} length` } : null;
+      }
+    };
+  }
+
+  static minNumber(min: number): ValidatorFn {
+    return (formControl) => {
+      if (formControl.value !== null) {
+        return formControl.value < min ? { 'minNumberError': `You need to put number upper than ${min}` } : null;
+      }
+    };
+  }
+
+  static maxNumber(max: number): ValidatorFn {
+    return (formControl) => {
+      if (formControl.value !== null) {
+        return formControl.value > max ? { 'maxNumberError': `You need to put number below ${max}` } : null;
+      }
+    };
+  }
+
+  static minAndMaxNumbers(min: number, max: number): ValidatorFn {
+    return (formControl) => {
+      if (formControl.value !== null) {
+        return formControl.value > max || formControl.value < min ?
+        { 'minAndMaxNumbersError': `You need to put numbers between ${min} and ${max}` } : null;
       }
     };
   }
@@ -101,7 +126,6 @@ export class Validator {
       }
     };
   }
-
 
   static matchPassword(password: FormControl): ValidatorFn {
     return formControl => formControl.value !== password.value ? { 'matchPasswordError': 'Passwords are not matched' } : null;
