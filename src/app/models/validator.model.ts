@@ -11,7 +11,7 @@ export class Validator {
   private static readonly IS_ALPHA_NUMERIC_SPACE_REGEX: RegExp = /^[A-Za-z0-9 ]*$/;
   private static readonly IS_USERNAME_REGEX: RegExp = /^[A-Za-z0-9_]*$/;
   private static readonly IS_PASSWORD_REGEX: RegExp = /^[A-Za-z0-9!@#$%^&*()_]*$/;
-  private static readonly IS_URL_REGEX: RegExp = /^(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9]\.[^\s]{2,})$/
+  private static readonly IS_URL_REGEX: RegExp = /^(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9]\.[^\s]{2,})$/;
   private static readonly IS_SLUG_REGEX: RegExp = /^[a-z][a-z\-]*[a-z]$/;
 
   static required(name: string): ValidatorFn {

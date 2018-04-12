@@ -12,12 +12,12 @@ import { MessageModule } from './modules/message/message.module';
 import { PaginationModule } from './modules/pagination/pagination.module';
 import { BackToTopModule } from './modules/back-to-top/back-to-top.module';
 import { LoadingModule } from './modules/loading/loading.module';
+import { ErrorFormModule } from './modules/error-form/error-form.module';
 
 // Components
 import { AppComponent } from './app.component';
-import { HomeComponent } from './components/main/pages/home/home.component';
-import { ErrorPageComponent } from './components/errors/error-page/error-page.component';
-import { ErrorFormComponent } from './components/errors/error-form/error-form.component';
+import { HomeComponent } from './pages/home/home.component';
+import { ErrorPageComponent } from './pages/error-page/error-page.component';
 
 // Services
 import { ValidationService } from './services/validation/validation.service';
@@ -37,7 +37,6 @@ import { DefaultImageDirective } from './directives/default-image/default-image.
   declarations: [
     AppComponent,
     HomeComponent,
-    ErrorFormComponent,
     ErrorPageComponent,
     DefaultImageDirective,
     CapitalizePipe,
@@ -58,7 +57,8 @@ import { DefaultImageDirective } from './directives/default-image/default-image.
     MessageModule.forRoot(),
     PaginationModule.forRoot(),
     BackToTopModule.forRoot(),
-    LoadingModule.forRoot()
+    LoadingModule.forRoot(),
+    ErrorFormModule.forRoot()
   ],
   providers: [
     ValidationService

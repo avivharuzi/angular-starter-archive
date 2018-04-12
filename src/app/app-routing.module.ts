@@ -3,8 +3,8 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 // Components
-import { HomeComponent } from './components/main/pages/home/home.component';
-import { ErrorPageComponent } from './components/errors/error-page/error-page.component';
+import { HomeComponent } from './pages/home/home.component';
+import { ErrorPageComponent } from './pages/error-page/error-page.component';
 
 // Routes
 const appRoutes: Routes = [

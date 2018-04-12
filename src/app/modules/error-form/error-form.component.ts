@@ -1,4 +1,4 @@
-import { Component, OnInit, Input , AfterContentChecked } from '@angular/core';
+import { Component, Input , AfterContentChecked } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 @Component({
@@ -6,15 +6,10 @@ import { FormControl } from '@angular/forms';
   templateUrl: './error-form.component.html',
   styleUrls: ['./error-form.component.css']
 })
-export class ErrorFormComponent implements OnInit , AfterContentChecked {
+export class ErrorFormComponent implements AfterContentChecked {
   @Input() public control: FormControl;
 
   public errors: string[];
-
-  constructor() { }
-
-  ngOnInit() {
-  }
 
   ngAfterContentChecked() {
     this.errors = new Array<string>();
