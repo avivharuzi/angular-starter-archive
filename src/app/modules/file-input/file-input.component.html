@@ -1,0 +1,6 @@
+<div class="form-group">
+  <div class="custom-file">
+    <input type="file" #fileInput class="custom-file-input" [multiple]="multiple" (change)="onChange($event)" id="customFile">
+    <label class="custom-file-label" for="customFile">{{ fileLabel }}</label>
+  </div>
+</div>
