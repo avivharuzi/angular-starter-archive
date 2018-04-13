@@ -13,6 +13,7 @@ import { PaginationModule } from './modules/pagination/pagination.module';
 import { BackToTopModule } from './modules/back-to-top/back-to-top.module';
 import { LoadingModule } from './modules/loading/loading.module';
 import { FileInputModule } from './modules/file-input/file-input.module';
+import { PictureModule } from './modules/picture/picture.module';
 import { ErrorFormModule } from './modules/error-form/error-form.module';
 
 // Components
@@ -60,7 +61,8 @@ import { DefaultImageDirective } from './directives/default-image/default-image.
     BackToTopModule.forRoot(),
     LoadingModule.forRoot(),
     FileInputModule.forRoot(),
-    ErrorFormModule.forRoot()
+    ErrorFormModule.forRoot(),
+    PictureModule.forRoot()
   ],
   providers: [
     ValidationService
