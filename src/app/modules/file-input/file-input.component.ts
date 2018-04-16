@@ -67,7 +67,7 @@ export class FileInputComponent implements OnChanges {
   resetImages(): void {
     this.files = null;
     this.fileUrls = null;
-    this.fileLabel = 'Choose Images';
+    this.fileLabel = 'Choose file';
     this.fileInput.nativeElement.value = '';
   }
 }

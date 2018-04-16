@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnChanges } from '@angular/core';
 
 @Component({
   selector: 'app-message',
@@ -9,8 +9,8 @@ export class MessageComponent implements OnInit, OnChanges {
   @Input() public message: any;
   @Input() public class: any;
   @Input() public dismissible: boolean;
-
-  public isOpen: boolean;
+  @Input() public isOpen: boolean;
+  @Output() public closedMessage: EventEmitter<any> = new EventEmitter<any>();
   public icon: string;
 
   constructor() {
@@ -24,7 +24,6 @@ export class MessageComponent implements OnInit, OnChanges {
 
   ngOnChanges() {
     this.getIcon();
-    this.isOpen = true;
   }
 
   isArray(value: any): boolean {
@@ -57,6 +56,6 @@ export class MessageComponent implements OnInit, OnChanges {
   }
 
   close(): void {
-    this.isOpen = false;
+    this.closedMessage.emit();
   }
 }
