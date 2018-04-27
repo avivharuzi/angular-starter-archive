@@ -23,6 +23,7 @@ import { ErrorPageComponent } from './pages/error-page/error-page.component';
 
 // Services
 import { ValidationService } from './services/validation/validation.service';
+import { HttpService } from './services/http/http.service';
 
 // Pipes
 import { SearchPipe } from './pipes/search/search.pipe';
@@ -65,7 +66,8 @@ import { DefaultImageDirective } from './directives/default-image/default-image.
     PictureModule.forRoot()
   ],
   providers: [
-    ValidationService
+    ValidationService,
+    HttpService
   ],
   bootstrap: [AppComponent]
 })
