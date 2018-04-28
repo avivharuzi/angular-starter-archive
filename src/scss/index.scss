@@ -1,2 +1,6 @@
-@import "./custom/bootstrap";
+// Vendors
+@import "./vendors/custom-bootstrap/bootstrap";
+
+// Base
+@import "./base/_mixins";
 @import "./base/_globals";
