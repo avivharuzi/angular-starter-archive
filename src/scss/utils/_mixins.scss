@@ -69,6 +69,14 @@
   height: 100%;
 }
 
+/*----------  Pseudo  ----------*/
+
+@mixin pseudo($display: block, $pos: absolute, $content: ''){
+  content: $content;
+  display: $display;
+  position: $pos;
+}
+
 /*----------  Opacity  ----------*/
 
 @mixin opacity($opacity) {
@@ -340,5 +348,36 @@ $breakpoints: (
   body {
     scrollbar-face-color: $primary;
     scrollbar-track-color: $secondary;
+  }
+}
+
+/*----------  Events  ----------*/
+
+@mixin on-event($self: false) {
+  @if $self {
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  } @else {
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  }
+}
+
+/*----------  Card Shadow  ----------*/
+
+@mixin card-shadow($depth) {
+  @if $depth < 1 {
+    box-shadow: none;
+  } @else if $depth > 5 {
+    @warn "Invalid $depth `#{$depth}` for mixin `card-shadow`.";
+  } @else {
+    box-shadow: bottom-shadow($depth), top-shadow($depth);
   }
 }
