@@ -14,6 +14,7 @@ import { BackToTopModule } from './modules/back-to-top/back-to-top.module';
 import { LoadingModule } from './modules/loading/loading.module';
 import { FileInputModule } from './modules/file-input/file-input.module';
 import { PictureModule } from './modules/picture/picture.module';
+import { CountDownTimerModule } from './modules/countdown-timer/countdown-timer.module';
 import { ErrorFormModule } from './modules/error-form/error-form.module';
 
 // Components
@@ -63,7 +64,8 @@ import { DefaultImageDirective } from './directives/default-image/default-image.
     LoadingModule.forRoot(),
     FileInputModule.forRoot(),
     ErrorFormModule.forRoot(),
-    PictureModule.forRoot()
+    PictureModule.forRoot(),
+    CountDownTimerModule.forRoot()
   ],
   providers: [
     ValidationService,
