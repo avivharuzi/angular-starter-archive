@@ -36,6 +36,7 @@ import { SafeHtmlPipe } from './pipes/safe-html/safe-html.pipe';
 
 // Directives
 import { DefaultImageDirective } from './directives/default-image/default-image.directive';
+import { ClipboardDirective } from './directives/clipboard/clipboard.directive';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { DefaultImageDirective } from './directives/default-image/default-image.
     HomeComponent,
     ErrorPageComponent,
     DefaultImageDirective,
+    ClipboardDirective,
     CapitalizePipe,
     SearchPipe,
     UcwordsPipe,
