@@ -10,7 +10,7 @@ import { ErrorPageComponent } from './pages/error-page/error-page.component';
 const appRoutes: Routes = [
   { path: '', component: HomeComponent, data: { title: 'Home' } },
   { path:  '', redirectTo: '', pathMatch: 'full' },
-  { path: '**', component: ErrorPageComponent }
+  { path: '**', component: ErrorPageComponent, data: { title: '404 - Page Not Found' } }
 ];
 
 const appRouter: ModuleWithProviders = RouterModule.forRoot(appRoutes);
