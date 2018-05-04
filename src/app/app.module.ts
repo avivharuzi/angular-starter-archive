@@ -34,6 +34,7 @@ import { DefaultPipe } from './pipes/default/default.pipe';
 import { TruncatePipe } from './pipes/truncate/truncate.pipe';
 import { SafeHtmlPipe } from './pipes/safe-html/safe-html.pipe';
 import { RepeatPipe } from './pipes/repeat/repeat.pipe';
+import { TrimPipe } from './pipes/trim/trim.pipe';
 
 // Directives
 import { DefaultImageDirective } from './directives/default-image/default-image.directive';
@@ -52,7 +53,8 @@ import { ClipboardDirective } from './directives/clipboard/clipboard.directive';
     DefaultPipe,
     TruncatePipe,
     SafeHtmlPipe,
-    RepeatPipe
+    RepeatPipe,
+    TrimPipe
   ],
   imports: [
     BrowserModule,

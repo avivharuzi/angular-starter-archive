@@ -13,12 +13,8 @@ export class RepeatPipe implements PipeTransform {
   }
 
   repeat(value: string, n: number, separator: string): string {
-    return this.isString(value)
+    return typeof value === 'string'
       ? (n === 0 ? value : (value + separator + this.repeat(value, n - 1, separator)))
       : value;
-  }
-
-  isString(value: any) {
-    return typeof value === 'string';
   }
 }
