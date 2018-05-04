@@ -2,10 +2,8 @@ import { Injectable } from '@angular/core';
 
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/observable/throw';
+import { Observable, throwError } from 'rxjs';
+import { map, catchError } from 'rxjs/operators';
 
 @Injectable()
 export class HttpService {
@@ -17,7 +15,7 @@ export class HttpService {
     return this.http[action](args[0], args[1], args[2]).map((res: any): Observable<any> => {
       return res;
     })
-    .catch((err: HttpErrorResponse) => Observable.throw(err.error));
+    .catch((err: HttpErrorResponse) => throwError(err.error));
   }
 
   get(...args: any[]): Observable<any> {

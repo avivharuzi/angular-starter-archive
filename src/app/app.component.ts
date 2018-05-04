@@ -2,9 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 
-import 'rxjs/add/operator/filter';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/mergeMap';
+import { filter, map, mergeMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -24,16 +22,16 @@ export class AppComponent implements OnInit  {
 
   changeTitle(): void {
     this.router.events
-      .filter((event) => event instanceof NavigationEnd)
-      .map(() => this.activatedRoute)
-      .map((route) => {
+      .pipe(filter((event) => event instanceof NavigationEnd))
+      .pipe(map(() => this.activatedRoute))
+      .pipe(map((route) => {
         while (route.firstChild) {
           route = route.firstChild;
         }
         return route;
-      })
-      .filter((route) => route.outlet === 'primary')
-      .mergeMap((route) => route.data)
+      }))
+      .pipe(filter((route) => route.outlet === 'primary'))
+      .pipe(mergeMap((route) => route.data))
       .subscribe((event) => this.titleService.setTitle(event['title']));
   }
 }
