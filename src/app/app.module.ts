@@ -33,6 +33,7 @@ import { UcwordsPipe } from './pipes/ucwords/ucwords.pipe';
 import { DefaultPipe } from './pipes/default/default.pipe';
 import { TruncatePipe } from './pipes/truncate/truncate.pipe';
 import { SafeHtmlPipe } from './pipes/safe-html/safe-html.pipe';
+import { RepeatPipe } from './pipes/repeat/repeat.pipe';
 
 // Directives
 import { DefaultImageDirective } from './directives/default-image/default-image.directive';
@@ -50,7 +51,8 @@ import { ClipboardDirective } from './directives/clipboard/clipboard.directive';
     UcwordsPipe,
     DefaultPipe,
     TruncatePipe,
-    SafeHtmlPipe
+    SafeHtmlPipe,
+    RepeatPipe
   ],
   imports: [
     BrowserModule,
