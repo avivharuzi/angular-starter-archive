@@ -36,6 +36,7 @@ import { SafeHtmlPipe } from './pipes/safe-html/safe-html.pipe';
 import { RepeatPipe } from './pipes/repeat/repeat.pipe';
 import { TrimPipe } from './pipes/trim/trim.pipe';
 import { MatchPipe } from './pipes/match/match.pipe';
+import { SlugifyPipe } from './pipes/slugify/slugify.pipe';
 
 // Directives
 import { DefaultImageDirective } from './directives/default-image/default-image.directive';
@@ -56,7 +57,8 @@ import { ClipboardDirective } from './directives/clipboard/clipboard.directive';
     SafeHtmlPipe,
     RepeatPipe,
     TrimPipe,
-    MatchPipe
+    MatchPipe,
+    SlugifyPipe
   ],
   imports: [
     BrowserModule,
