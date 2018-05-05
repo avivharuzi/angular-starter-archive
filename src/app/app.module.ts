@@ -22,10 +22,6 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ErrorPageComponent } from './pages/error-page/error-page.component';
 
-// Services
-import { ValidationService } from './services/validation/validation.service';
-import { HttpService } from './services/http/http.service';
-
 // Pipes
 import { SearchPipe } from './pipes/search/search.pipe';
 import { CapitalizePipe } from './pipes/capitalize/capitalize.pipe';
@@ -77,10 +73,7 @@ import { ClipboardDirective } from './directives/clipboard/clipboard.directive';
     PictureModule.forRoot(),
     CountDownTimerModule.forRoot()
   ],
-  providers: [
-    ValidationService,
-    HttpService
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
