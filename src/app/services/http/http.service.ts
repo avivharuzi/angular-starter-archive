@@ -12,10 +12,11 @@ export class HttpService {
   ) { }
 
   base(action: string, args: any[]): Observable<any> {
-    return this.http[action](args[0], args[1], args[2]).map((res: any): Observable<any> => {
+    return this.http[action](args[0], args[1], args[2])
+    .pipe(map((res: any): Observable<any> => {
       return res;
-    })
-    .catch((err: HttpErrorResponse) => throwError(err.error));
+    }))
+    .pipe(catchError((err: HttpErrorResponse) => throwError(err.error)));
   }
 
   get(...args: any[]): Observable<any> {
