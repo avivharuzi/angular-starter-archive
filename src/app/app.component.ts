@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
-import { Title } from '@angular/platform-browser';
 
-import { filter, map, mergeMap } from 'rxjs/operators';
+import { TitleService } from './services/title/title.service';
 
 @Component({
   selector: 'app-root',
@@ -11,29 +9,10 @@ import { filter, map, mergeMap } from 'rxjs/operators';
 })
 export class AppComponent implements OnInit  {
   constructor(
-    private router: Router,
-    private activatedRoute: ActivatedRoute,
-    private titleService: Title
+    private titleService: TitleService
   ) { }
 
   ngOnInit() {
-    this.changeTitle();
-  }
-
-  changeTitle(): void {
-    this.router.events
-      .pipe(
-        filter((event) => event instanceof NavigationEnd),
-        map(() => this.activatedRoute),
-        map((route) => {
-          while (route.firstChild) {
-            route = route.firstChild;
-          }
-          return route;
-        }),
-        filter((route) => route.outlet === 'primary'),
-        mergeMap((route) => route.data)
-      )
-      .subscribe((event) => this.titleService.setTitle(event['title']));
+    this.titleService.changeTitle();
   }
 }
