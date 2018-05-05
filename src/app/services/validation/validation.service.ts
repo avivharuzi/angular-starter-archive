@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class ValidationService {
   constructor() { }
 
-  checkValid(control): boolean {
+  checkValid(control: any): boolean {
     if (!(control.errors) && !(control.pristine)) {
       return true;
     } else {
@@ -14,7 +14,7 @@ export class ValidationService {
     }
   }
 
-  checkInvalid(control): boolean {
+  checkInvalid(control: any): boolean {
     if ((control.errors) && !(control.pristine)) {
       return true;
     } else {
@@ -22,7 +22,7 @@ export class ValidationService {
     }
   }
 
-  statusClass(control): string {
+  statusClass(control: any): string {
     if (!(control.errors) && !(control.pristine)) {
       return 'is-valid';
     } else if ((control.errors) && !(control.pristine)) {
@@ -30,14 +30,14 @@ export class ValidationService {
     }
   }
 
-  dirtyAllInputs(form): void {
+  dirtyAllInputs(form: any): void {
     Object.keys(form.controls).forEach(field => {
       const control = form.get(field);
       control.markAsDirty({ onlySelf: true });
     });
   }
 
-  pristineAllInputs(form): void {
+  pristineAllInputs(form: any): void {
     Object.keys(form.controls).forEach(field => {
       const control = form.get(field);
       control.markAsPristine({ onlySelf: true });

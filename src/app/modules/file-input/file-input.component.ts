@@ -7,9 +7,9 @@ import { Component, ViewChild, Input, Output, EventEmitter, OnChanges } from '@a
 export class FileInputComponent implements OnChanges {
   @Input() public files: any;
   @Input() public multiple: boolean;
-  @ViewChild('fileInput') public fileInput: any;
   @Output() public changedFiles: EventEmitter<any> = new EventEmitter<any>();
   @Output() public changedUrls: EventEmitter<any> = new EventEmitter<any>();
+  @ViewChild('fileInput') public fileInput: any;
 
   public fileLabel: string;
   public fileUrls: any[];
@@ -25,7 +25,7 @@ export class FileInputComponent implements OnChanges {
     }
   }
 
-  onChange(event): void {
+  onChange(event: any): void {
     let fileList: FileList = event.target.files;
 
     this.files = new Array<File>();

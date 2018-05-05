@@ -18,14 +18,14 @@ export class PaginationService {
     this.pages = null;
   }
 
-  range(start?: number, stop?: number, step?: number) {
+  range(start?: number, stop?: number, step?: number): number[] {
     if (arguments.length <= 1) {
       stop = start || 0;
       start = 0;
     }
     step = arguments[2] || 1;
 
-    let idx = 0;
+    let idx: number = 0;
     let length: number = Math.max(Math.ceil((stop - start) / step), 0);
     let range: number[] = new Array(length);
 

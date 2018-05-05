@@ -27,7 +27,7 @@ export class CountDownTimerComponent implements OnInit, OnDestroy {
     this.stopTimer();
   }
 
-  calculateCountDown() {
+  calculateCountDown(): void {
     let vm = this;
     this.timer = setInterval(function () {
       let now = new Date().getTime();

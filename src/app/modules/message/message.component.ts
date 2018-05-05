@@ -11,6 +11,7 @@ export class MessageComponent implements OnInit, OnChanges {
   @Input() public dismissible: boolean;
   @Input() public isOpen: boolean;
   @Output() public closedMessage: EventEmitter<any> = new EventEmitter<any>();
+
   public icon: string;
 
   constructor() {
