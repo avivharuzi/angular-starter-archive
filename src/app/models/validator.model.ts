@@ -1,20 +1,20 @@
 import { ValidatorFn, FormControl } from '@angular/forms';
 
 export class Validator {
-  private static readonly IS_NUMERIC_FLOAT_REGEX: RegExp = /^[+-]?\d+(\.\d+)?$/;
-  private static readonly PHONE_ISRAEL_REGEX: RegExp = /^((\+972|972)|0)( |-)?([1-468-9]( |-)?\d{7}|(5|7)[0-9]( |-)?\d{7})$/;
+  private static readonly ALPHA_REGEX: RegExp = /^[A-Za-z]*$/;
+  private static readonly ALPHA_DASH_REGEX: RegExp = /^[A-Za-z_-]*$/;
+  private static readonly ALPHA_SPACES_REGEX: RegExp = /^[A-Za-z ]*$/;
+  private static readonly ALPHA_NUMERIC_REGEX: RegExp = /^[A-Za-z0-9]*$/;
+  private static readonly ALPHA_NUMERIC_SPACES_REGEX: RegExp = /^[A-Za-z0-9 ]*$/;
+  private static readonly NUMERIC_FLOAT_REGEX: RegExp = /^[+-]?\d+(\.\d+)?$/;
   private static readonly WITHOUT_NUMBERS_REGEX: RegExp = /^[^\d]*$/;
-  private static readonly IS_EMAIL_REGEX: RegExp = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/;
-  private static readonly IS_ALPHA_REGEX: RegExp = /^[A-Za-z]*$/;
-  private static readonly IS_ALPHA_DASH_REGEX: RegExp = /^[A-Za-z_-]*$/;
-  private static readonly IS_ALPHA_SPACE_REGEX: RegExp = /^[A-Za-z ]*$/;
-  private static readonly IS_ALPHA_NUMERIC_REGEX: RegExp = /^[A-Za-z0-9]*$/;
-  private static readonly IS_ALPHA_NUMERIC_SPACE_REGEX: RegExp = /^[A-Za-z0-9 ]*$/;
-  private static readonly IS_USERNAME_REGEX: RegExp = /^[A-Za-z0-9_]*$/;
-  private static readonly IS_PASSWORD_REGEX: RegExp = /^[A-Za-z0-9!@#$%^&*()_]*$/;
-  private static readonly IS_URL_REGEX: RegExp = /^(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9]\.[^\s]{2,})$/;
-  private static readonly IS_SLUG_REGEX: RegExp = /^[a-z][a-z\-]*[a-z]$/;
-  private static readonly IS_IP_REGEX: RegExp = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
+  private static readonly USERNAME_REGEX: RegExp = /^[A-Za-z0-9_]*$/;
+  private static readonly PASSWORD_REGEX: RegExp = /^[A-Za-z0-9!@#$%^&*()_]*$/;
+  private static readonly EMAIL_REGEX: RegExp = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/;
+  private static readonly URL_REGEX: RegExp = /^(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9]\.[^\s]{2,})$/;
+  private static readonly SLUG_REGEX: RegExp = /^[a-z][a-z\-]*[a-z]$/;
+  private static readonly IP_REGEX: RegExp = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
+  private static readonly PHONE_ISRAEL_REGEX: RegExp = /^((\+972|972)|0)( |-)?([1-468-9]( |-)?\d{7}|(5|7)[0-9]( |-)?\d{7})$/;
 
   static required(name: string): ValidatorFn {
     return formControl => formControl.value === '' || formControl.value === null ? { 'requiredError': `${name} is required` } : null;
@@ -70,72 +70,72 @@ export class Validator {
     };
   }
 
-  static isNumericFloat(): ValidatorFn {
+  static numericFloat(): ValidatorFn {
     return (formControl) => {
       if (formControl.value !== null) {
-        return !Validator.IS_NUMERIC_FLOAT_REGEX.test(formControl.value) ? { 'isNumericFloatError': `Only numbers are allowed` } : null;
+        return !Validator.NUMERIC_FLOAT_REGEX.test(formControl.value) ? { 'numericFloatError': `Only numbers are allowed` } : null;
       }
     };
   }
 
-  static isAlpha(): ValidatorFn {
+  static alpha(): ValidatorFn {
     return (formControl) => {
       if (formControl.value !== null) {
-        return !Validator.IS_ALPHA_REGEX.test(formControl.value) ? { 'isAlphaError': `Only letters are allowed` } : null;
+        return !Validator.ALPHA_REGEX.test(formControl.value) ? { 'alphaError': `Only letters are allowed` } : null;
       }
     };
   }
 
-  static isAlphaSpace(): ValidatorFn {
+  static alphaSpaces(): ValidatorFn {
     return (formControl) => {
       if (formControl.value !== null) {
-        return !Validator.IS_ALPHA_SPACE_REGEX.test(formControl.value) ?
-        { 'isAlphaSpaceError': `Only letters and spaces are allowed` } : null;
+        return !Validator.ALPHA_SPACES_REGEX.test(formControl.value) ?
+        { 'alphaSpacesError': `Only letters and spaces are allowed` } : null;
       }
     };
   }
 
-  static isAlphaNumeric(): ValidatorFn {
+  static alphaNumeric(): ValidatorFn {
     return (formControl) => {
       if (formControl.value !== null) {
-        return !Validator.IS_ALPHA_NUMERIC_REGEX.test(formControl.value) ?
-        { 'isAlphaNumericError': `Only numbers and letters are allowed` } : null;
+        return !Validator.ALPHA_NUMERIC_REGEX.test(formControl.value) ?
+        { 'alphaNumericError': `Only numbers and letters are allowed` } : null;
       }
     };
   }
 
-  static isAlphaDash(): ValidatorFn {
+  static alphaDash(): ValidatorFn {
     return (formControl) => {
       if (formControl.value !== null) {
-        return !Validator.IS_ALPHA_DASH_REGEX.test(formControl.value) ?
-        { 'isAlphaDashError': `Only letters and dashes are allowed` } : null;
+        return !Validator.ALPHA_DASH_REGEX.test(formControl.value) ?
+        { 'alphaDashError': `Only letters and dashes are allowed` } : null;
       }
     };
   }
 
-  static isAlphaNumericSpace(): ValidatorFn {
+  static alphaNumericSpaces(): ValidatorFn {
     return (formControl) => {
       if (formControl.value !== null) {
-        return !Validator.IS_ALPHA_NUMERIC_SPACE_REGEX.test(formControl.value) ?
-        { 'isAlphaNumericSpaceError': `Only letters, numbers and spaces are allowed` } : null;
+        return !Validator.ALPHA_NUMERIC_SPACES_REGEX.test(formControl.value) ?
+        { 'alphaNumericSpacesError': `Only letters, numbers and spaces are allowed` } : null;
       }
     };
   }
 
-  static isUsername(): ValidatorFn {
+  static username(): ValidatorFn {
     return (formControl) => {
       if (formControl.value !== null) {
-        return !Validator.IS_USERNAME_REGEX.test(formControl.value) ?
-        { 'isUsernameError': `Enter a valid username` } : null;
+        return !Validator.USERNAME_REGEX.test(formControl.value) ?
+        { 'usernameError': `Enter a valid username` } : null;
       }
     };
   }
 
-  static isPassword(): ValidatorFn {
+  static password(): ValidatorFn {
     return (formControl) => {
       if (formControl.value !== null) {
-        return !Validator.IS_PASSWORD_REGEX.test(formControl.value) ?
-        { 'isPasswordError': `Enter a valid password` } : null;
+        return !Validator.PASSWORD_REGEX.test(formControl.value) ?
+        { 'passwordError': `Enter a valid password` } : null;
       }
     };
   }
@@ -157,42 +157,42 @@ export class Validator {
     { 'withoutNumbersError': `You cant type numbers` } : null;
   }
 
-  static isEmail(): ValidatorFn {
+  static email(): ValidatorFn {
     return (formControl) => {
       if (formControl.value !== null) {
-        return !Validator.IS_EMAIL_REGEX.test(formControl.value) ? { 'isEmailError': `Enter a valid email` } : null;
+        return !Validator.EMAIL_REGEX.test(formControl.value) ? { 'emailError': `Enter a valid email` } : null;
       }
     };
   }
 
-  static isUrl(): ValidatorFn {
+  static url(): ValidatorFn {
     return (formControl) => {
       if (formControl.value !== null) {
-        return !Validator.IS_URL_REGEX.test(formControl.value) ? { 'isUrlError': `Enter a valid url` } : null;
+        return !Validator.URL_REGEX.test(formControl.value) ? { 'urlError': `Enter a valid url` } : null;
       }
     };
   }
 
-  static isIp(): ValidatorFn {
+  static ip(): ValidatorFn {
     return (formControl) => {
       if (formControl.value !== null) {
-        return !Validator.IS_IP_REGEX.test(formControl.value) ? { 'isIpError': `Enter a valid ip` } : null;
+        return !Validator.IP_REGEX.test(formControl.value) ? { 'ipError': `Enter a valid ip` } : null;
       }
     };
   }
 
-  static isSlug(): ValidatorFn {
+  static slug(): ValidatorFn {
     return (formControl) => {
       if (formControl.value !== null) {
-        return !Validator.IS_SLUG_REGEX.test(formControl.value) ? { 'isSlugError': `Enter a valid slug` } : null;
+        return !Validator.SLUG_REGEX.test(formControl.value) ? { 'slugError': `Enter a valid slug` } : null;
       }
     };
   }
 
-  static pattern(reg: RegExp, errorMessage: string): ValidatorFn {
+  static regex(reg: RegExp, errorMessage: string): ValidatorFn {
     return (formControl) => {
       if (formControl.value !== null) {
-        return !reg.test(formControl.value) ? { 'patternError': errorMessage } : null;
+        return !reg.test(formControl.value) ? { 'regexError': errorMessage } : null;
       }
     };
   }
