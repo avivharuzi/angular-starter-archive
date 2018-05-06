@@ -6,6 +6,7 @@ export class Validator {
   private static readonly WITHOUT_NUMBERS_REGEX: RegExp = /^[^\d]*$/;
   private static readonly IS_EMAIL_REGEX: RegExp = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/;
   private static readonly IS_ALPHA_REGEX: RegExp = /^[A-Za-z]*$/;
+  private static readonly IS_ALPHA_DASH_REGEX: RegExp = /^[A-Za-z_-]*$/;
   private static readonly IS_ALPHA_SPACE_REGEX: RegExp = /^[A-Za-z ]*$/;
   private static readonly IS_ALPHA_NUMERIC_REGEX: RegExp = /^[A-Za-z0-9]*$/;
   private static readonly IS_ALPHA_NUMERIC_SPACE_REGEX: RegExp = /^[A-Za-z0-9 ]*$/;
@@ -13,6 +14,7 @@ export class Validator {
   private static readonly IS_PASSWORD_REGEX: RegExp = /^[A-Za-z0-9!@#$%^&*()_]*$/;
   private static readonly IS_URL_REGEX: RegExp = /^(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9]\.[^\s]{2,})$/;
   private static readonly IS_SLUG_REGEX: RegExp = /^[a-z][a-z\-]*[a-z]$/;
+  private static readonly IS_IP_REGEX: RegExp = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
 
   static required(name: string): ValidatorFn {
     return formControl => formControl.value === '' || formControl.value === null ? { 'requiredError': `${name} is required` } : null;
@@ -102,6 +104,15 @@ export class Validator {
     };
   }
 
+  static isAlphaDash(): ValidatorFn {
+    return (formControl) => {
+      if (formControl.value !== null) {
+        return !Validator.IS_ALPHA_DASH_REGEX.test(formControl.value) ?
+        { 'isAlphaDashError': `Only letters and dashes are allowed` } : null;
+      }
+    };
+  }
+
   static isAlphaNumericSpace(): ValidatorFn {
     return (formControl) => {
       if (formControl.value !== null) {
@@ -158,6 +169,14 @@ export class Validator {
     return (formControl) => {
       if (formControl.value !== null) {
         return !Validator.IS_URL_REGEX.test(formControl.value) ? { 'isUrlError': `Enter a valid url` } : null;
+      }
+    };
+  }
+
+  static isIp(): ValidatorFn {
+    return (formControl) => {
+      if (formControl.value !== null) {
+        return !Validator.IS_IP_REGEX.test(formControl.value) ? { 'isIpError': `Enter a valid ip` } : null;
       }
     };
   }
