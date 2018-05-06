@@ -16,6 +16,7 @@ export class Validator {
   private static readonly IP_REGEX: RegExp = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
   private static readonly SLUG_REGEX: RegExp = /^[a-z][a-z\-]*[a-z]$/;
   private static readonly TIME_REGEX: RegExp = /^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/;
+  private static readonly DATE_REGEX: RegExp = /^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$/;
   private static readonly PHONE_ISRAEL_REGEX: RegExp = /^((\+972|972)|0)( |-)?([1-468-9]( |-)?\d{7}|(5|7)[0-9]( |-)?\d{7})$/;
 
   static required(name: string): ValidatorFn {
@@ -204,6 +205,14 @@ export class Validator {
     return (formControl) => {
       if (formControl.value !== null) {
         return !Validator.TIME_REGEX.test(formControl.value) ? { 'timeError': `Enter a valid time` } : null;
+      }
+    };
+  }
+
+  static date(): ValidatorFn {
+    return (formControl) => {
+      if (formControl.value !== null) {
+        return !Validator.DATE_REGEX.test(formControl.value) ? { 'dateError': `Enter a valid date` } : null;
       }
     };
   }
