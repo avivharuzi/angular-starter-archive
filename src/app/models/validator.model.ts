@@ -7,7 +7,9 @@ export class Validator {
   private static readonly ALPHA_NUMERIC_REGEX: RegExp = /^[A-Za-z0-9]*$/;
   private static readonly ALPHA_NUMERIC_DASH_REGEX: RegExp = /^[A-Za-z0-9_]*$/;
   private static readonly ALPHA_NUMERIC_SPACES_REGEX: RegExp = /^[A-Za-z0-9 ]*$/;
-  private static readonly NUMERIC_FLOAT_REGEX: RegExp = /^[+-]?\d+(\.\d+)?$/;
+  private static readonly NUMERIC_REGEX: RegExp = /^[+-]?\d+(\.\d+)?$/;
+  private static readonly NUMERIC_FLOAT_REGEX: RegExp = /^\d+(\.\d+)?$/;
+  private static readonly NUMERIC_DIGITS_REGEX: RegExp = /^\d+$/;
   private static readonly WITHOUT_NUMBERS_REGEX: RegExp = /^[^\d]*$/;
   private static readonly USERNAME_REGEX: RegExp = /^[A-Za-z0-9_]*$/;
   private static readonly PASSWORD_REGEX: RegExp = /^[A-Za-z0-9!@#$%^&*()_]*$/;
@@ -81,14 +83,6 @@ export class Validator {
     };
   }
 
-  static numericFloat(): ValidatorFn {
-    return (formControl) => {
-      if (formControl.value !== null) {
-        return !Validator.NUMERIC_FLOAT_REGEX.test(formControl.value) ? { 'numericFloatError': `Only numbers are allowed` } : null;
-      }
-    };
-  }
-
   static alpha(): ValidatorFn {
     return (formControl) => {
       if (formControl.value !== null) {
@@ -138,6 +132,30 @@ export class Validator {
       if (formControl.value !== null) {
         return !Validator.ALPHA_NUMERIC_SPACES_REGEX.test(formControl.value) ?
         { 'alphaNumericSpacesError': `Only letters, numbers and spaces are allowed` } : null;
+      }
+    };
+  }
+
+  static numeric(): ValidatorFn {
+    return (formControl) => {
+      if (formControl.value !== null) {
+        return !Validator.NUMERIC_REGEX.test(formControl.value) ? { 'numericError': `Only numbers are allowed` } : null;
+      }
+    };
+  }
+
+  static numericFloat(): ValidatorFn {
+    return (formControl) => {
+      if (formControl.value !== null) {
+        return !Validator.NUMERIC_FLOAT_REGEX.test(formControl.value) ? { 'numericFloatError': `Only numbers with floating are allowed` } : null;
+      }
+    };
+  }
+
+  static numericDigits(): ValidatorFn {
+    return (formControl) => {
+      if (formControl.value !== null) {
+        return !Validator.NUMERIC_DIGITS_REGEX.test(formControl.value) ? { 'numericDigitsError': `Only digit numbers are allowed` } : null;
       }
     };
   }
