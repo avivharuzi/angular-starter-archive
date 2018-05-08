@@ -183,10 +183,6 @@ export class Validator {
     };
   }
 
-  static matchPassword(password: FormControl): ValidatorFn {
-    return formControl => formControl.value !== password.value ? { 'matchPasswordError': 'Passwords are not matched' } : null;
-  }
-
   static email(): ValidatorFn {
     return (formControl) => {
       if (formControl.value !== null) {
@@ -238,7 +234,7 @@ export class Validator {
   static phoneIsrael(): ValidatorFn {
     return (formControl) => {
       if (formControl.value !== null) {
-        return !Validator.PHONE_ISRAEL_REGEX.test(formControl.value) ? { 'phoneIsraelError': `Enter a valid phone number` } : null;
+        return !Validator.PHONE_ISRAEL_REGEX.test(formControl.value) ? { 'phoneIsraelError': `Enter a valid israel phone number` } : null;
       }
     };
   }
