@@ -9,13 +9,14 @@ import { FormControl } from '@angular/forms';
 export class ErrorFormComponent implements AfterContentChecked {
   @Input() public control: FormControl;
 
-  public errors: string[];
+  public error: string;
 
   ngAfterContentChecked() {
-    this.errors = new Array<string>();
+    this.error = null;
     for (const key in this.control.errors) {
       if (this.control.dirty && this.control.invalid) {
-        this.errors.push(this.control.errors[key]);
+        this.error = this.control.errors[key];
+        break;
       }
     }
   }
