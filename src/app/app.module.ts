@@ -22,20 +22,20 @@ import { HomeComponent } from './pages/home/home.component';
 import { ErrorPageComponent } from './pages/error-page/error-page.component';
 
 // Pipes
-import { SearchPipe } from './pipes/search/search.pipe';
-import { CapitalizePipe } from './pipes/capitalize/capitalize.pipe';
-import { UcwordsPipe } from './pipes/ucwords/ucwords.pipe';
-import { DefaultPipe } from './pipes/default/default.pipe';
-import { TruncatePipe } from './pipes/truncate/truncate.pipe';
-import { SafeHtmlPipe } from './pipes/safe-html/safe-html.pipe';
-import { RepeatPipe } from './pipes/repeat/repeat.pipe';
-import { TrimPipe } from './pipes/trim/trim.pipe';
-import { MatchPipe } from './pipes/match/match.pipe';
-import { SlugifyPipe } from './pipes/slugify/slugify.pipe';
+import { SearchPipe } from './pipes/search.pipe';
+import { CapitalizePipe } from './pipes/capitalize.pipe';
+import { UcwordsPipe } from './pipes/ucwords.pipe';
+import { DefaultPipe } from './pipes/default.pipe';
+import { TruncatePipe } from './pipes/truncate.pipe';
+import { SafeHtmlPipe } from './pipes/safe-html.pipe';
+import { RepeatPipe } from './pipes/repeat.pipe';
+import { TrimPipe } from './pipes/trim.pipe';
+import { MatchPipe } from './pipes/match.pipe';
+import { SlugifyPipe } from './pipes/slugify.pipe';
 
 // Directives
-import { DefaultImageDirective } from './directives/default-image/default-image.directive';
-import { ClipboardDirective } from './directives/clipboard/clipboard.directive';
+import { DefaultImageDirective } from './directives/default-image.directive';
+import { ClipboardDirective } from './directives/clipboard.directive';
 
 @NgModule({
   declarations: [

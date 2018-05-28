@@ -1,5 +1,5 @@
 import { Directive, Input, ElementRef, OnInit } from '@angular/core';
-import { DEFAULT_IMAGE_PATH } from './../../constants/urls';
+import { DEFAULT_IMAGE_PATH } from './../constants/urls';
 
 @Directive({
   selector: '[appDefaultImage]'
