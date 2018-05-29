@@ -11,6 +11,7 @@ import { MessageModule } from './modules/message/message.module';
 import { PaginationModule } from './modules/pagination/pagination.module';
 import { BackToTopModule } from './modules/back-to-top/back-to-top.module';
 import { LoadingModule } from './modules/loading/loading.module';
+import { InputModule } from './modules/input/input.module';
 import { FileInputModule } from './modules/file-input/file-input.module';
 import { PictureModule } from './modules/picture/picture.module';
 import { CountDownTimerModule } from './modules/countdown-timer/countdown-timer.module';
@@ -66,6 +67,7 @@ import { ClipboardDirective } from './directives/clipboard.directive';
     PaginationModule.forRoot(),
     BackToTopModule.forRoot(),
     LoadingModule.forRoot(),
+    InputModule.forRoot(),
     FileInputModule.forRoot(),
     ErrorFormModule.forRoot(),
     PictureModule.forRoot(),
