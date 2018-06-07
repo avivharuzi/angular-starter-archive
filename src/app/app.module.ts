@@ -57,7 +57,7 @@ import { ClipboardDirective } from './directives/clipboard.directive';
     SlugifyPipe
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'my-app' }),
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
