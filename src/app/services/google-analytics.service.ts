@@ -9,7 +9,7 @@ export class GoogleAnalyticsService {
     private router: Router
   ) { }
 
-  routes() {
+  routes(): void {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         (<any>window).ga('set', 'page', event.urlAfterRedirects);
@@ -18,7 +18,7 @@ export class GoogleAnalyticsService {
     });
   }
 
-  public emitEvent(eventCategory: string, eventAction: string, eventLabel: string = null, eventValue: number = null) {
+  emitEvent(eventCategory: string, eventAction: string, eventLabel: string = null, eventValue: number = null): void {
     (<any>window).ga('send', 'event', {
       eventCategory: eventCategory,
       eventLabel: eventLabel,
