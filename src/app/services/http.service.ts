@@ -9,11 +9,11 @@ import { map, catchError } from 'rxjs/operators';
 })
 export class HttpService {
   constructor(
-    private http: HttpClient
+    private httpClient: HttpClient
   ) { }
 
   base(action: string, args: any[]): Observable<any> {
-    return this.http[action](args[0], args[1], args[2])
+    return this.httpClient[action](args[0], args[1], args[2])
       .pipe(
         map((res: any): Observable<any> => {
           return res;
