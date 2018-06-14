@@ -28,6 +28,7 @@ import { CapitalizePipe } from './pipes/capitalize.pipe';
 import { UcwordsPipe } from './pipes/ucwords.pipe';
 import { DefaultPipe } from './pipes/default.pipe';
 import { TruncatePipe } from './pipes/truncate.pipe';
+import { SafeUrlPipe } from './pipes/safe-url.pipe';
 import { SafeHtmlPipe } from './pipes/safe-html.pipe';
 import { RepeatPipe } from './pipes/repeat.pipe';
 import { TrimPipe } from './pipes/trim.pipe';
@@ -50,6 +51,7 @@ import { ClipboardDirective } from './directives/clipboard.directive';
     UcwordsPipe,
     DefaultPipe,
     TruncatePipe,
+	SafeUrlPipe,
     SafeHtmlPipe,
     RepeatPipe,
     TrimPipe,
