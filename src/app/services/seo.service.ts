@@ -40,6 +40,12 @@ export class SeoService {
 
   setTitle(titleName: string): void {
     this.title.setTitle(titleName);
+    const ogTitle: MetaDefinition = { property: 'og:title', content: titleName };
+    const twitterTitle: MetaDefinition = { name: 'twitter:title', content: titleName };
+    const googleTitle: MetaDefinition = { itemprop: 'name', content: titleName };
+    this.meta.updateTag(ogTitle);
+    this.meta.updateTag(twitterTitle);
+    this.meta.updateTag(googleTitle);
   }
 
   setMeta(metaTags: any): void {
@@ -50,7 +56,39 @@ export class SeoService {
 
     if (metaTags.description) {
       const description: MetaDefinition = { name: 'description', content: metaTags.description };
+      const ogDescription: MetaDefinition = { property: 'og:description', content: metaTags.description };
+      const twitterDescription: MetaDefinition = { name: 'twitter:description', content: metaTags.description };
+      const googleDescription: MetaDefinition = { itemprop: 'description', content: metaTags.description };
       this.meta.updateTag(description);
+      this.meta.updateTag(ogDescription);
+      this.meta.updateTag(twitterDescription);
+      this.meta.updateTag(googleDescription);
+    }
+
+    if (metaTags.type) {
+      const ogType: MetaDefinition = { property: 'og:type', content: metaTags.type };
+      this.meta.updateTag(ogType);
+    }
+
+    if (metaTags.card) {
+      const twitterCard: MetaDefinition = { name: 'twitter:card', content: metaTags.card };
+      this.meta.updateTag(twitterCard);
+    }
+
+    if (metaTags.image) {
+      const ogImage: MetaDefinition = { property: 'og:image', content: metaTags.image };
+      const twitterImage: MetaDefinition = { name: 'twitter:image', content: metaTags.image };
+      const googleImage: MetaDefinition = { itemprop: 'image', content: metaTags.image };
+      this.meta.updateTag(ogImage);
+      this.meta.updateTag(twitterImage);
+      this.meta.updateTag(googleImage);
+    }
+
+    if (metaTags.url) {
+      const ogUrl: MetaDefinition = { property: 'og:url', content: metaTags.url };
+      const twitterUrl: MetaDefinition = { name: 'twitter:url', content: metaTags.url };
+      this.meta.updateTag(ogUrl);
+      this.meta.updateTag(twitterUrl);
     }
   }
 }
