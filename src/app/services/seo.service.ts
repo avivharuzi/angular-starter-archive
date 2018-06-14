@@ -43,6 +43,7 @@ export class SeoService {
     const ogTitle: MetaDefinition = { property: 'og:title', content: titleName };
     const twitterTitle: MetaDefinition = { name: 'twitter:title', content: titleName };
     const googleTitle: MetaDefinition = { itemprop: 'name', content: titleName };
+    this.meta.removeTag('itemprop="name"');
     this.meta.updateTag(ogTitle);
     this.meta.updateTag(twitterTitle);
     this.meta.updateTag(googleTitle);
@@ -59,6 +60,7 @@ export class SeoService {
       const ogDescription: MetaDefinition = { property: 'og:description', content: metaTags.description };
       const twitterDescription: MetaDefinition = { name: 'twitter:description', content: metaTags.description };
       const googleDescription: MetaDefinition = { itemprop: 'description', content: metaTags.description };
+      this.meta.removeTag('itemprop="description"');
       this.meta.updateTag(description);
       this.meta.updateTag(ogDescription);
       this.meta.updateTag(twitterDescription);
@@ -79,6 +81,7 @@ export class SeoService {
       const ogImage: MetaDefinition = { property: 'og:image', content: metaTags.image };
       const twitterImage: MetaDefinition = { name: 'twitter:image', content: metaTags.image };
       const googleImage: MetaDefinition = { itemprop: 'image', content: metaTags.image };
+      this.meta.removeTag('itemprop="image"');
       this.meta.updateTag(ogImage);
       this.meta.updateTag(twitterImage);
       this.meta.updateTag(googleImage);
@@ -89,6 +92,11 @@ export class SeoService {
       const twitterUrl: MetaDefinition = { name: 'twitter:url', content: metaTags.url };
       this.meta.updateTag(ogUrl);
       this.meta.updateTag(twitterUrl);
+    }
+
+    if (metaTags.author) {
+      const author: MetaDefinition = { name: 'author', content: metaTags.author };
+      this.meta.updateTag(author);
     }
   }
 }

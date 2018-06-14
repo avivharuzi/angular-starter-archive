@@ -6,11 +6,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { ErrorPageComponent } from './pages/error-page/error-page.component';
 
+// Meta
+import { seo } from './constants/seo';
+
 // Routes
 const routes: Routes = [
-  { path: '', component: HomeComponent, data: { title: 'Home' } },
+  { path: '', component: HomeComponent, data: seo.home },
   { path:  '', redirectTo: '', pathMatch: 'full' },
-  { path: '**', component: ErrorPageComponent, data: { title: '404 - Page Not Found' } }
+  { path: '**', component: ErrorPageComponent, data: seo.errorPage }
 ];
 
 @NgModule({
