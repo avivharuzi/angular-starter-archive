@@ -1,4 +1,4 @@
-interface SeoInterface {
+export interface SeoInterface {
   title?: string;
   meta?: {
     keywords?: string;
