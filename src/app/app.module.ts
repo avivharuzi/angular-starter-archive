@@ -34,6 +34,7 @@ import { RepeatPipe } from './pipes/repeat.pipe';
 import { TrimPipe } from './pipes/trim.pipe';
 import { MatchPipe } from './pipes/match.pipe';
 import { SlugifyPipe } from './pipes/slugify.pipe';
+import { AutoLinkPipe } from './pipes/auto-link.pipe';
 
 // Directives
 import { DefaultImageDirective } from './directives/default-image.directive';
@@ -56,7 +57,8 @@ import { ClipboardDirective } from './directives/clipboard.directive';
     RepeatPipe,
     TrimPipe,
     MatchPipe,
-    SlugifyPipe
+    SlugifyPipe,
+    AutoLinkPipe
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'my-app' }),
