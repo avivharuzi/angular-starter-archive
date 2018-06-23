@@ -52,7 +52,7 @@ import { ClipboardDirective } from './directives/clipboard.directive';
     UcwordsPipe,
     DefaultPipe,
     TruncatePipe,
-	SafeUrlPipe,
+    SafeUrlPipe,
     SafeHtmlPipe,
     RepeatPipe,
     TrimPipe,
