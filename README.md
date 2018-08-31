@@ -1,2 +1,2 @@
 # angular-starter
-angular 5 starter files project
+angular 6 starter files project
