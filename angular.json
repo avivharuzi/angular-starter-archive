@@ -28,6 +28,7 @@
             "assets": [
               "src/favicon.ico",
               "src/manifest.json",
+              "src/sitemap.xml",
               "src/assets"
             ],
             "styles": [
