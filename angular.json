@@ -103,6 +103,8 @@
             "assets": [
               "src/favicon.ico",
               "src/manifest.json",
+              "src/sitemap.xml",
+              "src/robots.txt",
               "src/assets"
             ]
           }
