@@ -40,6 +40,10 @@ import { AutoLinkPipe } from './pipes/auto-link.pipe';
 import { DefaultImageDirective } from './directives/default-image.directive';
 import { ClipboardDirective } from './directives/clipboard.directive';
 
+// Service Worker
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -66,6 +70,7 @@ import { ClipboardDirective } from './directives/clipboard.directive';
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     HttpClientModule,
     MessageModule.forRoot(),
     PaginationModule.forRoot(),
