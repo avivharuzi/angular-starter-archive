@@ -1,3 +1,3 @@
 # Angular Starter
 
-Angular 7 starter files project.
+Angular starter files project.
