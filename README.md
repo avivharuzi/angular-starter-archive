@@ -2,7 +2,7 @@
 
 Angular Starter is an Angular template based from @angular/cli template with extra features to start project more faster.
 
-## Included
+## Extra Features
 
 * PWA
 * Angular Universal (SSR)
@@ -14,7 +14,7 @@ Angular Starter is an Angular template based from @angular/cli template with ext
 1. Replace **src/favicon.ico** with your website favicon
 1. Replace **src/assets/icons** with your website icons
 1. Replace **src/assets/images/defaults/default-image** if you want different default image (this is used in appDefaultImage directive)
-1. Update this **README.md** according to your project changes.
+1. Update this **README.md** according to your project changes
 
 ## Commands
 
@@ -54,13 +54,13 @@ Build project for production.
 npm run build:prod
 ```
 
-Build project for production with Angular Universal (SSR)
+Build project for production with Angular Universal (SSR).
 
 ```bash
 npm run build:ssr
 ```
 
-Build project for production with Prerender
+Build project for production with Prerender.
 
 ```bash
 npm run prerender
