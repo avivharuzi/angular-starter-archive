@@ -1,27 +1,67 @@
-# AngularStarter
+# Angular Starter
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.1.
+Angular Starter is an Angular template based from @angular/cli template with extra features to start project more faster.
 
-## Development server
+## Included
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+* PWA
+* Angular Universal (SSR)
+* Reactive State (@ngrx/store, @ngrx/store-devtools, @ngrx/effects) 
 
-## Code scaffolding
+## First Steps
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. Replace all **angular-starter** keyword from this project with the new project name, for example: **example-website**
+1. Replace **src/favicon.ico** with your website favicon
+1. Replace **src/assets/icons** with your website icons
+1. Replace **src/assets/images/defaults/default-image** if you want different default image (this is used in appDefaultImage directive)
+1. Update this README.md according to your project changes.
 
-## Build
+## Commands
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Serve project in development.
 
-## Running unit tests
+```bash
+npm start
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Test project.
 
-## Running end-to-end tests
+```bash
+npm test
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Test project without watching files.
 
-## Further help
+```bash
+npm run test:without-watch
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Lint project.
+
+```bash
+npm run lint.
+```
+
+E2E project.
+
+```bash
+npm run e2e
+```
+
+Build project for production.
+
+```bash
+npm run build:prod
+```
+
+Build project for production with Angular Universal (SSR)
+
+```bash
+npm run build:ssr
+```
+
+Build project for production with Prerender
+
+```bash
+npm run prerender
+```
