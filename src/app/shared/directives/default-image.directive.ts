@@ -9,7 +9,8 @@ export class DefaultImageDirective {
   @Input() appDefaultImage: string;
 
   @HostBinding('src')
-  @Input() src: string;
+  @Input()
+  src: string;
 
   @HostListener('error')
   onError() {

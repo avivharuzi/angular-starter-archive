@@ -17,7 +17,11 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "prerender": "ng run angular-starter:prerender",
-    "analyze": "npm run build:stats && npm run serve:stats"
+    "analyze": "npm run build:stats && npm run serve:stats",
+    "format": "prettier --write \"**/*.{ts,js,css,scss,html,json,md}\"",
+    "format:watch": "onchange \"**/*.{ts,js,css,scss,html,json,md}\" -- prettier --write {{changed}}",
+    "format:check": "prettier --check \"**/*.{ts,js,css,scss,html,json,md}\"",
+    "format:staged": "pretty-quick --staged --pattern \"**/*.{ts,js,css,scss,html,json,md}\""
   },
   "private": true,
   "dependencies": {
@@ -52,6 +56,7 @@
     "@types/node": "^12.11.1",
     "codelyzer": "^5.1.2",
     "http-server": "^0.12.1",
+    "husky": "^4.2.5",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.4.1",
@@ -59,9 +64,13 @@
     "karma-coverage-istanbul-reporter": "~2.1.0",
     "karma-jasmine": "~3.0.1",
     "karma-jasmine-html-reporter": "^1.4.2",
+    "onchange": "^6.1.0",
+    "prettier": "^2.0.4",
+    "pretty-quick": "^2.0.1",
     "protractor": "~5.4.3",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
+    "tslint-config-prettier": "^1.18.0",
     "typescript": "~3.8.3",
     "webpack-bundle-analyzer": "^3.7.0"
   }

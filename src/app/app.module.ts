@@ -13,9 +13,7 @@ import { CoreModule } from './core/core.module';
 import { environment } from '../environments/environment';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-  ],
+  declarations: [AppComponent],
   imports: [
     AppRoutingModule,
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -28,5 +26,4 @@ import { environment } from '../environments/environment';
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {
-}
+export class AppModule {}
