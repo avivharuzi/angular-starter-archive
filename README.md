@@ -13,6 +13,8 @@ Angular Starter is an Angular template based from @angular/cli template with ext
 - Angular Universal (SSR)
 - Reactive State (@ngrx/store, @ngrx/store-devtools, @ngrx/effects)
 - Bundle Analyzer
+- Husky (git hooks)
+- Prettier (format code style)
 
 ## First Steps
 
@@ -121,4 +123,16 @@ Analyze project.
 
 ```bash
 npm run analyze
+```
+
+Format project.
+
+```bash
+npm run format
+```
+
+Format project with watch mode.
+
+```bash
+npm run format:watch
 ```
