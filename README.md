@@ -8,17 +8,61 @@ Angular Starter is an Angular template based from @angular/cli template with ext
 
 ## Extra Features
 
+* SCSS Support
 * PWA
 * Angular Universal (SSR)
 * Reactive State (@ngrx/store, @ngrx/store-devtools, @ngrx/effects) 
 
 ## First Steps
 
-1. Replace all **angular-starter** keyword from this project with the new project name, for example: **example-website**
+1. Replace all **angular-starter** keyword from this project with your new project name, for example: **my-website**
 1. Replace **src/favicon.ico** with your website favicon
 1. Replace **src/assets/icons** with your website icons
-1. Replace **src/assets/images/defaults/default-image** if you want different default image (this is used in appDefaultImage directive)
+1. Replace **src/assets/images/defaults/default-image** if you want different default image (this is used in **DefaultImageDirective**)
 1. Update this **README.md** according to your project changes
+
+## Rules
+
+1. Always generate files with Angular Schematics (@angular/cli)
+1. Application logic like services (which are common in the application scope) must be in **CoreModule**
+1. Shared components, directives and pipes must be in **SharedModule**
+1. Create feature modules (which will be lazy loaded) with plural name
+
+### Feature Module Example (heroes)
+
+```text
+src
+  app
+    core
+      ...
+    heroes
+      components
+        hero-detail
+          hero-detail.component.ts|html|css|spec
+        hero-edit
+          hero-edit.component.ts|html|css|spec
+        hero-list
+          hero-list.component.ts|html|css|spec
+          hero-item
+            hero-item.component.ts|html|css|spec
+      shared
+        components
+          ...
+        hero.ts
+        hero.service.ts|spec
+      store
+        hero.actions.ts
+        hero.effects.ts
+        hero.reducer.ts
+        hero.selectors.ts
+      heroes.component.ts|html|css|spec
+      heroes.module.ts
+      heroes-routing.module.ts
+    shared
+      ...
+    store
+      ...
+```
 
 ## Commands
 
