@@ -2,6 +2,10 @@
 
 Angular Starter is an Angular template based from @angular/cli template with extra features to start project more faster.
 
+## Angular Version
+
+9.1.1
+
 ## Extra Features
 
 * PWA
