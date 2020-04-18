@@ -88,7 +88,7 @@ npm run test:without-watch
 Lint project.
 
 ```bash
-npm run lint.
+npm run lint
 ```
 
 E2E project.
