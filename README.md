@@ -77,6 +77,24 @@ Serve project in development.
 npm start
 ```
 
+Format project.
+
+```bash
+npm run format
+```
+
+Format project with watch mode.
+
+```bash
+npm run format:watch
+```
+
+Lint project.
+
+```bash
+npm run lint
+```
+
 Test project.
 
 ```bash
@@ -89,16 +107,16 @@ Test project without watching files.
 npm run test:without-watch
 ```
 
-Lint project.
-
-```bash
-npm run lint
-```
-
 E2E project.
 
 ```bash
 npm run e2e
+```
+
+Analyze project.
+
+```bash
+npm run analyze
 ```
 
 Build project for production.
@@ -117,22 +135,4 @@ Build project for production with Prerender.
 
 ```bash
 npm run prerender
-```
-
-Analyze project.
-
-```bash
-npm run analyze
-```
-
-Format project.
-
-```bash
-npm run format
-```
-
-Format project with watch mode.
-
-```bash
-npm run format:watch
 ```
