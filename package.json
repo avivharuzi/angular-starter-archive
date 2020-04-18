@@ -4,17 +4,20 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start:ssr": "ng run angular-starter:serve-ssr",
     "build": "ng build",
+    "build:stats": "ng build --stats-json",
+    "build:prod": "ng build --prod",
+    "build:ssr": "ng build --prod && ng run angular-starter:server:production",
+    "serve:stats": "webpack-bundle-analyzer dist/angular-starter/browser/stats-es2015.json",
+    "serve:prod": "http-server -p 8000 -c-1 dist/angular-starter/browser --proxy http://localhost:8000?",
+    "serve:ssr": "node dist/angular-starter/server/main.js",
     "test": "ng test",
+    "test:without-watch": "ng test --watch false",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "test:without-watch": "ng test --watch false",
-    "serve:prod": "http-server -p 8000 -c-1 dist/angular-starter/browser --proxy http://localhost:8000?",
-    "build:prod": "ng build --prod",
-    "dev:ssr": "ng run angular-starter:serve-ssr",
-    "serve:ssr": "node dist/angular-starter/server/main.js",
-    "build:ssr": "ng build --prod && ng run angular-starter:server:production",
-    "prerender": "ng run angular-starter:prerender"
+    "prerender": "ng run angular-starter:prerender",
+    "analyze": "npm run build:stats && npm run serve:stats"
   },
   "private": true,
   "dependencies": {
@@ -59,6 +62,7 @@
     "protractor": "~5.4.3",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
-    "typescript": "~3.8.3"
+    "typescript": "~3.8.3",
+    "webpack-bundle-analyzer": "^3.7.0"
   }
 }

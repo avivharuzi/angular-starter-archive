@@ -12,6 +12,7 @@ Angular Starter is an Angular template based from @angular/cli template with ext
 * PWA
 * Angular Universal (SSR)
 * Reactive State (@ngrx/store, @ngrx/store-devtools, @ngrx/effects) 
+* Bundle Analyzer
 
 ## First Steps
 
@@ -113,4 +114,10 @@ Build project for production with Prerender.
 
 ```bash
 npm run prerender
+```
+
+Analyze project.
+
+```bash
+npm run analyze
 ```
