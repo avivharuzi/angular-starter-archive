@@ -23,6 +23,7 @@ Angular Starter is an Angular template based from @angular/cli template with ext
 1. Replace **src/assets/icons** with your website icons
 1. Replace **src/assets/images/defaults/default-image** if you want different default image (this is used in **DefaultImageDirective**)
 1. Update this **README.md** according to your project changes
+1. If you are using monorepo multi-package repository consider to remove husky (git hooks) to prevent conflicts between repos, I recommended to delete **.huskyrc.json** file and run: **npm uninstall husky** and then maybe to add husky in the root of the project
 
 ## Rules
 
