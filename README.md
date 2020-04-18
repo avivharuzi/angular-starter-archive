@@ -27,6 +27,7 @@ Angular Starter is an Angular template based from @angular/cli template with ext
 1. Application logic like services (which are common in the application scope) must be in **CoreModule**
 1. Shared components, directives and pipes must be in **SharedModule**
 1. Create feature modules (which will be lazy loaded) with plural name
+1. Never use **window** or **document** JavaScript objects directly because in SSR mode it does not exists, but there is a way to handle it with **isPlatformBrowser** from **@angular/platform-browser**
 
 ### Feature Module Example (heroes)
 
