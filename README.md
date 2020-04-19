@@ -15,6 +15,7 @@ Angular Starter is an Angular template based from @angular/cli template with ext
 - Bundle Analyzer
 - Husky (git hooks)
 - Prettier (format code style)
+- SEO
 
 ## First Steps
 
