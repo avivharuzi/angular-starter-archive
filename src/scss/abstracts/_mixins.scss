@@ -1,5 +1,4 @@
 /*---------- Absolute Dimensions ----------*/
-
 @mixin absolute-position($top: auto, $right: auto, $bottom: auto, $left: auto) {
   position: absolute;
   top: $top;
@@ -56,14 +55,12 @@
 }
 
 /*---------- Resets ----------*/
-
 @mixin no-space() {
   margin: 0;
   padding: 0;
 }
 
 /*---------- Sizing ----------*/
-
 @mixin wh-full($is-important: false) {
   @if ($is-important) {
     width: 100% !important;
@@ -75,7 +72,6 @@
 }
 
 /*---------- Text ----------*/
-
 @mixin truncate($truncation-boundary) {
   max-width: $truncation-boundary;
   white-space: nowrap;
@@ -84,7 +80,6 @@
 }
 
 /*---------- Clear Fix ----------*/
-
 @mixin clear-fix() {
   &:before,
   &:after {
@@ -97,7 +92,6 @@
 }
 
 /*---------- Single Side Border Radius ----------*/
-
 @mixin border-top-radius($radius) {
   border-top-right-radius: $radius;
   border-top-left-radius: $radius;
