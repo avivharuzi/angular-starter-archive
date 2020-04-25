@@ -1,3 +1,4 @@
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { EffectsModule } from '@ngrx/effects';
 import { NgModule } from '@angular/core';
@@ -17,6 +18,7 @@ import { environment } from '../environments/environment';
   declarations: [AppComponent],
   imports: [
     AppRoutingModule,
+    BrowserAnimationsModule,
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     CoreModule,
     NgxSeoModule.forRoot(),

@@ -1,10 +1,16 @@
-# Angular Starter
+# Angular Starter - Angular Material Template
 
 Angular Starter is an Angular template based from @angular/cli template with extra features to start project more faster.
 
 ## Angular Version
 
 9.1.1
+
+## Template Features
+
+- Angular Material
+- Material Icons
+- Roboto Font
 
 ## Extra Features
 
