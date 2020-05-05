@@ -16,6 +16,7 @@ Angular Starter is an Angular template based from @angular/cli template with ext
 - Husky (git hooks)
 - Prettier (format code style)
 - SEO
+- Docker Support
 
 ## First Steps
 
@@ -138,3 +139,19 @@ Build project for production with Prerender.
 ```bash
 npm run prerender
 ```
+
+## Using Docker in Production
+
+Run docker for production.
+
+```bash
+docker-compose -f docker-compose-prod.yml up --build
+```
+
+Run docker for production with Angular Universal (SSR).
+
+```bash
+docker-compose -f docker-compose-ssr.yml up --build
+```
+
+> NOTE: There are many ways to use Docker files in production environment please be careful with the way you are using it.

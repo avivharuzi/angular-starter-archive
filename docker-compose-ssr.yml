@@ -1,0 +1,12 @@
+version: "3.7"
+
+services:
+  angular-starter-ssr:
+    container_name: angular-starter-ssr
+    restart: always
+    init: true
+    build:
+      context: ./
+      dockerfile: docker/ssr/Dockerfile
+    ports:
+      - "8080:4000"
