@@ -1,0 +1,12 @@
+version: "3.7"
+
+services:
+  angular-starter-prod:
+    container_name: angular-starter-prod
+    restart: always
+    init: true
+    build:
+      context: ./
+      dockerfile: docker/prod/Dockerfile
+    ports:
+      - "8080:80"
