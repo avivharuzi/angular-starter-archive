@@ -6,6 +6,13 @@ Angular Starter is an Angular template based from @angular/cli template with ext
 
 9.1.1
 
+## Prerequisites
+
+- Node.js (>= 12 required)
+- npm package manager (>= 6 required)
+- docker (19 >= optional)
+- docker-compose (3.7 >= optional)
+
 ## Extra Features
 
 - SCSS Support
