@@ -10,10 +10,15 @@ export class DefaultImageDirective {
 
   @HostBinding('src')
   @Input()
+  // @ts-ignore
   src: string;
 
   @HostListener('error')
-  onError() {
-    this.src = this.appDefaultImage ? this.appDefaultImage : environment.defaultImagePath;
+  onError(): void {
+    this.src = this.appDefaultImage;
+  }
+
+  constructor() {
+    this.appDefaultImage = environment.defaultImagePath;
   }
 }
