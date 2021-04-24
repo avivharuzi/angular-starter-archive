@@ -4,7 +4,7 @@ Angular Starter is an Angular template based from @angular/cli template with ext
 
 ## Angular Version
 
-10.0.3
+11.2.11
 
 ## Prerequisites
 
