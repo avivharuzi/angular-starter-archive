@@ -1,4 +1,4 @@
-FROM node:12.16-alpine3.11 as builder
+FROM node:14.16.1-alpine3.13 as builder
 
 WORKDIR /usr/src/app
 
@@ -12,7 +12,7 @@ COPY ./ ./
 
 RUN npm run build:prod
 
-FROM nginx:1.18.0-alpine
+FROM nginx:1.20.0-alpine
 
 COPY ./docker/prod/nginx/default.conf /etc/nginx/conf.d/default.conf
 
