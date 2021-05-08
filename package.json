@@ -35,7 +35,7 @@
     "@angular/platform-server": "~11.2.11",
     "@angular/router": "~11.2.11",
     "@angular/service-worker": "~11.2.11",
-    "@avivharuzi/ngx-seo": "^10.0.0",
+    "@avivharuzi/ngx-seo": "^11.0.0",
     "@ngrx/effects": "^11.1.1",
     "@ngrx/store": "^11.1.1",
     "@ngrx/store-devtools": "^11.1.1",
