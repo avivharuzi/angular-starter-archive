@@ -21,7 +21,7 @@ import { environment } from '../environments/environment';
     BrowserAnimationsModule,
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     CoreModule,
-    NgxSeoModule.forRoot(),
+    NgxSeoModule.forRoot({ preserve: false }),
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the app is stable
@@ -31,7 +31,6 @@ import { environment } from '../environments/environment';
     StoreModule.forRoot(appReducer),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     EffectsModule.forRoot(appEffects),
-    NgxSeoModule.forRoot({ preserve: false }),
   ],
   providers: [],
   bootstrap: [AppComponent],
