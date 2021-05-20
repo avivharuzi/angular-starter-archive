@@ -4,14 +4,14 @@ Angular Starter is an Angular template based from @angular/cli template with ext
 
 ## Angular Version
 
-11.2.11
+12.0.0
 
 ## Prerequisites
 
 - Node.js (>= 12 required)
 - npm package manager (>= 6 required)
-- docker (19 >= optional)
-- docker-compose (3.7 >= optional)
+- docker (20 >= optional)
+- docker-compose (3.9 >= optional)
 
 ## Extra Features
 
@@ -117,22 +117,22 @@ Test project without watching files.
 npm run test:without-watch
 ```
 
-E2E project.
-
-```bash
-npm run e2e
-```
-
 Analyze project.
 
 ```bash
 npm run analyze
 ```
 
+Build project for development.
+
+```bash
+npm run build:dev
+```
+
 Build project for production.
 
 ```bash
-npm run build:prod
+npm run build
 ```
 
 Build project for production with Angular Universal (SSR).
