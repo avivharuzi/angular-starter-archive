@@ -16,13 +16,14 @@ Angular Starter is an Angular template based from @angular/cli template with ext
 ## Extra Features
 
 - SCSS Support
+- SEO
 - PWA
 - Angular Universal (SSR)
 - Reactive State (@ngrx/store, @ngrx/store-devtools, @ngrx/effects)
 - Bundle Analyzer
-- Husky (git hooks)
+- ESLint
 - Prettier (format code style)
-- SEO
+- Husky (git hooks)
 - Docker Support
 
 ## First Steps
@@ -81,46 +82,16 @@ src
 
 ## Commands
 
-Serve project in development.
+Serve project in development mode.
 
 ```bash
 npm start
 ```
 
-Format project.
+Serve project in ssr mode.
 
 ```bash
-npm run format
-```
-
-Format project with watch mode.
-
-```bash
-npm run format:watch
-```
-
-Lint project.
-
-```bash
-npm run lint
-```
-
-Test project.
-
-```bash
-npm test
-```
-
-Test project without watching files.
-
-```bash
-npm run test:without-watch
-```
-
-Analyze project.
-
-```bash
-npm run analyze
+npm start:ssr
 ```
 
 Build project for development.
@@ -145,6 +116,60 @@ Build project for production with Prerender.
 
 ```bash
 npm run prerender
+```
+
+Test project.
+
+```bash
+npm test
+```
+
+Test project without watching files.
+
+```bash
+npm run test:without-watch
+```
+
+Lint project.
+
+```bash
+npm run lint
+```
+
+Lint project and fix files.
+
+```bash
+npm run lint:fix
+```
+
+Format project.
+
+```bash
+npm run format
+```
+
+Format project with watch mode.
+
+```bash
+npm run format:watch
+```
+
+Run builded project.
+
+```bash
+npm run serve
+```
+
+Run builded project after using ssr mode.
+
+```bash
+npm run serve:ssr
+```
+
+Analyze project.
+
+```bash
+npm run analyze
 ```
 
 ## Using Docker in Production
