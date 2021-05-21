@@ -4,14 +4,14 @@ Angular Starter is an Angular template based from @angular/cli template with ext
 
 ## Angular Version
 
-11.2.11
+12.0.0
 
 ## Prerequisites
 
 - Node.js (>= 12 required)
 - npm package manager (>= 6 required)
-- docker (19 >= optional)
-- docker-compose (3.7 >= optional)
+- docker (20 >= optional)
+- docker-compose (3.9 >= optional)
 
 ## Template Features
 
@@ -22,13 +22,14 @@ Angular Starter is an Angular template based from @angular/cli template with ext
 ## Extra Features
 
 - SCSS Support
+- SEO
 - PWA
 - Angular Universal (SSR)
 - Reactive State (@ngrx/store, @ngrx/store-devtools, @ngrx/effects)
 - Bundle Analyzer
-- Husky (git hooks)
+- ESLint
 - Prettier (format code style)
-- SEO
+- Husky (git hooks)
 - Docker Support
 
 ## First Steps
@@ -87,28 +88,40 @@ src
 
 ## Commands
 
-Serve project in development.
+Serve project in development mode.
 
 ```bash
 npm start
 ```
 
-Format project.
+Serve project in ssr mode.
 
 ```bash
-npm run format
+npm start:ssr
 ```
 
-Format project with watch mode.
+Build project for development.
 
 ```bash
-npm run format:watch
+npm run build:dev
 ```
 
-Lint project.
+Build project for production.
 
 ```bash
-npm run lint
+npm run build
+```
+
+Build project for production with Angular Universal (SSR).
+
+```bash
+npm run build:ssr
+```
+
+Build project for production with Prerender.
+
+```bash
+npm run prerender
 ```
 
 Test project.
@@ -123,34 +136,46 @@ Test project without watching files.
 npm run test:without-watch
 ```
 
-E2E project.
+Lint project.
 
 ```bash
-npm run e2e
+npm run lint
+```
+
+Lint project and fix files.
+
+```bash
+npm run lint:fix
+```
+
+Format project.
+
+```bash
+npm run format
+```
+
+Format project with watch mode.
+
+```bash
+npm run format:watch
+```
+
+Run builded project.
+
+```bash
+npm run serve
+```
+
+Run builded project after using ssr mode.
+
+```bash
+npm run serve:ssr
 ```
 
 Analyze project.
 
 ```bash
 npm run analyze
-```
-
-Build project for production.
-
-```bash
-npm run build:prod
-```
-
-Build project for production with Angular Universal (SSR).
-
-```bash
-npm run build:ssr
-```
-
-Build project for production with Prerender.
-
-```bash
-npm run prerender
 ```
 
 ## Using Docker in Production

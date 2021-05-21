@@ -10,8 +10,7 @@ export class DefaultImageDirective {
 
   @HostBinding('src')
   @Input()
-  // @ts-ignore
-  src: string;
+  src?: string;
 
   @HostListener('error')
   onError(): void {
