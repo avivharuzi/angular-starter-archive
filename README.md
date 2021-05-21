@@ -15,9 +15,8 @@ Angular Starter is an Angular template based from @angular/cli template with ext
 
 ## Template Features
 
-- Bootstrap 4.6.0
-- Angular Bootstrap (ngx-bootstrap)
-- Font Awesome 5
+- Bootstrap 5.0.1
+- Boostrap Icons 1.5.0
 
 ## Extra Features
 
