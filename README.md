@@ -1,4 +1,4 @@
-# Angular Starter
+# Angular Starter - Tailwind CSS Template
 
 Angular Starter is an Angular template based from @angular/cli template with extra features to start project faster.
 
@@ -12,6 +12,10 @@ Angular Starter is an Angular template based from @angular/cli template with ext
 - npm package manager (>= 6 required)
 - docker (20 >= optional)
 - docker-compose (3.9 >= optional)
+
+## Template Features
+
+- Tailwind CSS
 
 ## Extra Features
 
