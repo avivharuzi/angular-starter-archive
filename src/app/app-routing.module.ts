@@ -1,13 +1,20 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
+import { CoreComponent } from './core/core.component';
 import { HomeComponent } from './core/components/home/home.component';
 import { NotFoundComponent } from './core/components/not-found/not-found.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: '', redirectTo: '', pathMatch: 'full' },
-  { path: '**', component: NotFoundComponent },
+  {
+    path: '',
+    component: CoreComponent,
+    children: [
+      { path: '', component: HomeComponent },
+      { path: '', redirectTo: '', pathMatch: 'full' },
+      { path: '**', component: NotFoundComponent },
+    ],
+  },
 ];
 
 @NgModule({
