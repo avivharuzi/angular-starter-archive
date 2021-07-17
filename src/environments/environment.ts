@@ -4,7 +4,6 @@
 
 export const environment = {
   production: false,
-  defaultImagePath: 'assets/images/defaults/default-image.png',
 };
 
 /*
