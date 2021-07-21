@@ -37,7 +37,6 @@ Angular Starter is an Angular template based from @angular/cli template with ext
 1. Replace all **angular-starter** keyword from this project with your new project name, for example: **my-website**
 1. Replace **src/favicon.ico** with your website favicon
 1. Replace **src/assets/icons** with your website icons
-1. Replace **src/assets/images/defaults/default-image** if you want different default image (this is used in **DefaultImageDirective**)
 1. Update this **README.md** according to your project changes
 1. If you are using monorepo multi-package repository consider removing husky (git hooks) to prevent conflicts between repos, I recommended deleting **.huskyrc.json** file and run: **npm uninstall husky** and then maybe to add husky in the root of the project
 
@@ -57,29 +56,32 @@ src
   app
     core
       ...
-    heroes
-      components
-        hero-detail
-          hero-detail.component.ts|html|css|spec
-        hero-edit
-          hero-edit.component.ts|html|css|spec
-        hero-list
-          hero-list.component.ts|html|css|spec
-          hero-item
-            hero-item.component.ts|html|css|spec
-      shared
+    features
+      heroes
         components
-          ...
-        hero.ts
-        hero.service.ts|spec
-      store
-        hero.actions.ts
-        hero.effects.ts
-        hero.reducer.ts
-        hero.selectors.ts
-      heroes.component.ts|html|css|spec
-      heroes.module.ts
-      heroes-routing.module.ts
+          hero-detail
+            hero-detail.component.ts|html|css|spec
+          hero-edit
+            hero-edit.component.ts|html|css|spec
+          hero-list
+            hero-list.component.ts|html|css|spec
+            hero-item
+              hero-item.component.ts|html|css|spec
+          hero-new
+            hero-new.component.ts|html|css|spec
+        shared
+          components
+            ...
+          hero.ts
+          hero.service.ts|spec
+        store
+          hero.actions.ts
+          hero.effects.ts
+          hero.reducer.ts
+          hero.selectors.ts
+        heroes.component.ts|html|css|spec
+        heroes.module.ts
+        heroes-routing.module.ts
     shared
       ...
     store

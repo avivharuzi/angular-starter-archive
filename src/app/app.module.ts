@@ -1,6 +1,7 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { EffectsModule } from '@ngrx/effects';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { NgxSeoModule } from '@avivharuzi/ngx-seo';
 import { ServiceWorkerModule } from '@angular/service-worker';
@@ -21,6 +22,7 @@ import { environment } from '../environments/environment';
     BrowserAnimationsModule,
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     CoreModule,
+    HttpClientModule,
     NgxSeoModule.forRoot({ preserve: false }),
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
