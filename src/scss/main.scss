@@ -1,6 +1,6 @@
-@import './vendor/bootstrap/bootstrap';
-@import './vendor/bootstrap-icons/bootstrap-icons';
+@use './vendor/bootstrap/bootstrap';
+@use './vendor/bootstrap-icons/bootstrap-icons';
 
-@import './base/reset';
-@import './base/typography';
-@import './base/common';
+@use './base/reset';
+@use './base/typography';
+@use './base/common';
