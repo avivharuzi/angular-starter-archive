@@ -1,5 +1,4 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-
 import { NgxSeoService } from '@avivharuzi/ngx-seo';
 
 @Component({
