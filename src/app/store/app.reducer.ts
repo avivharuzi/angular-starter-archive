@@ -1,5 +1,5 @@
 import { ActionReducerMap } from '@ngrx/store';
 
-export interface AppState {}
+import { AppState } from './app.state';
 
 export const appReducer: ActionReducerMap<AppState> = {};
