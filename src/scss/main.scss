@@ -1,6 +1,6 @@
-@import './vendor/material/material';
-@import './vendor/material-icons/material-icons';
+@use './vendor/material/material';
+@use './vendor/material-icons/material-icons';
 
-@import './base/reset';
-@import './base/typography';
-@import './base/common';
+@use './base/reset';
+@use './base/typography';
+@use './base/common';
