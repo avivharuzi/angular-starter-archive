@@ -133,7 +133,13 @@ npm test
 Test project without watching files.
 
 ```bash
-npm run test:without-watch
+npm run test:no-watch
+```
+
+Test project with code coverage.
+
+```bash
+npm run test:code-coverage
 ```
 
 Lint project.
