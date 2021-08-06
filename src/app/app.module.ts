@@ -12,7 +12,6 @@ import { AppComponent } from './app.component';
 import { appEffects } from './store/app.effects';
 import { appReducer } from './store/app.reducer';
 import { AppRoutingModule } from './app-routing.module';
-import { CoreModule } from './core/core.module';
 import { environment } from '../environments/environment';
 
 @NgModule({
@@ -21,7 +20,6 @@ import { environment } from '../environments/environment';
     AppRoutingModule,
     BrowserAnimationsModule,
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
-    CoreModule,
     HttpClientModule,
     NgxSeoModule.forRoot({ preserve: false }),
     ServiceWorkerModule.register('ngsw-worker.js', {
