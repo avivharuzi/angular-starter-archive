@@ -19,7 +19,7 @@
     "format": "prettier --write \"**/*.{ts,js,css,scss,html,json,md}\"",
     "serve": "http-server -p 8000 -c-1 dist/angular-starter/browser --proxy http://localhost:8000?",
     "serve:ssr": "node dist/angular-starter/server/main.js",
-    "serve:stats": "webpack-bundle-analyzer dist/angular-starter/browser/stats-es2015.json",
+    "serve:stats": "webpack-bundle-analyzer dist/angular-starter/browser/stats.json",
     "analyze": "npm run build:stats && npm run serve:stats",
     "cz": "git-cz",
     "prepare": "husky install"
