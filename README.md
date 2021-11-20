@@ -169,6 +169,12 @@ Analyze project.
 npm run analyze
 ```
 
+Run commitizen.
+
+```bash
+npm run cz
+```
+
 ## Using Docker in Production
 
 Run docker for production.

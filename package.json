@@ -16,7 +16,7 @@
     "test:code-coverage": "ng test --no-watch --code-coverage",
     "lint": "ng lint",
     "lint:fix": "ng lint --fix",
-    "format": "prettier --write \"**/*.{ts,js,css,scss,html,json,md}\"",
+    "format": "prettier --write \"**/*.{html,css,scss,js,ts,json,md}\"",
     "serve": "http-server -p 8000 -c-1 dist/angular-starter/browser --proxy http://localhost:8000?",
     "serve:ssr": "node dist/angular-starter/server/main.js",
     "serve:stats": "webpack-bundle-analyzer dist/angular-starter/browser/stats.json",
