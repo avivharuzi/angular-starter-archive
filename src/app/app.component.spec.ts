@@ -1,4 +1,3 @@
-import { NgxSeoModule } from '@avivharuzi/ngx-seo';
 import { RouterTestingModule } from '@angular/router/testing';
 import { TestBed, waitForAsync } from '@angular/core/testing';
 
@@ -8,7 +7,7 @@ describe('AppComponent', () => {
   beforeEach(
     waitForAsync(() => {
       TestBed.configureTestingModule({
-        imports: [RouterTestingModule, NgxSeoModule.forRoot()],
+        imports: [RouterTestingModule],
         declarations: [AppComponent],
       }).compileComponents();
     })
