@@ -1,4 +1,4 @@
-FROM node:14.17.4 as builder
+FROM node:16 as builder
 
 WORKDIR /usr/src/app
 
@@ -12,7 +12,7 @@ COPY ./ ./
 
 RUN npm run build:prod
 
-FROM nginx:1.21.1
+FROM nginx:1
 
 COPY ./docker/prod/nginx/default.conf /etc/nginx/conf.d/default.conf
 
