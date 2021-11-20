@@ -7,6 +7,7 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
+          "changeDetection": "OnPush",
           "style": "scss"
         },
         "@schematics/angular:application": {
@@ -159,10 +160,12 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-starter:build:production"
+              "browserTarget": "angular-starter:build:production",
+              "serverTarget": "angular-starter:server:production"
             },
             "development": {
-              "browserTarget": "angular-starter:build:development"
+              "browserTarget": "angular-starter:build:development",
+              "serverTarget": "angular-starter:server:development"
             }
           },
           "defaultConfiguration": "production"
@@ -170,8 +173,5 @@
       }
     }
   },
-  "defaultProject": "angular-starter",
-  "cli": {
-    "defaultCollection": "@angular-eslint/schematics"
-  }
+  "defaultProject": "angular-starter"
 }

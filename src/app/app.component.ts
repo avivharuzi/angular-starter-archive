@@ -1,5 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { NgxSeoService } from '@avivharuzi/ngx-seo';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,10 +6,4 @@ import { NgxSeoService } from '@avivharuzi/ngx-seo';
   styleUrls: ['./app.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AppComponent implements OnInit {
-  constructor(private ngxSeoService: NgxSeoService) {}
-
-  ngOnInit(): void {
-    this.ngxSeoService.subscribe();
-  }
-}
+export class AppComponent {}
